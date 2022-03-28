@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\AddjobController;
+use App\Http\Controllers\FullCalenderController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\EmployeController;
 use App\Http\Controllers\ApplicantController;
@@ -44,10 +45,9 @@ Route::get('/display', [App\Http\Controllers\DisplayController::class,'index']);
 Route::get('/applicant', [App\Http\Controllers\ApplicantController::class,'index']);
 
 
+Route::get('calender', [FullCalenderController::class, 'index']);
 
-Route::get('/calender', function () {
-    return view('calender');
-})->middleware(['auth'])->name('calender');
+Route::post('calender/action', [FullCalenderController::class, 'action']);
 
 
 
