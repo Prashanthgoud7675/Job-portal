@@ -66,7 +66,7 @@ class RegisteredUserController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/jobs');
+        return redirect('/login');
     }
 
 

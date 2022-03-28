@@ -13,21 +13,20 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('jobs', function (Blueprint $table) {
+        Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->string(column:'JobId');
-            $table->string(column:'JobTitle');
+            $table->string(column: 'job_id');
+            $table->string(column: 'JobTitle');
+            $table->string(column: 'JobRole');
             $table->text(column: 'Description');
             $table->unsignedBigInteger(column: 'Positions');
             $table->text(column: 'Location');
             $table->unsignedBigInteger(column: 'AnnualSalary');
-            $table->unsignedBigInteger(column: 'DeptId');
-            $table->string(column: 'EmpId');
+            $table->string(column: 'Dept_id');
             $table->unsignedBigInteger(column: 'Active');
             $table->date(column: 'CreatedDate');
-            $table->unsignedBigInteger(column: 'Created_By');
-            $table->text(column: 'Remarks');
-            $table->unsignedBigInteger(column: 'JobsId');
+            $table->string(column: 'CreatedBy');
+            $table->string(column: 'ApplyLink');
             $table->date(column: 'CloseDate');
             $table->timestamps();
         });
@@ -40,6 +39,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jobs');
+        Schema::dropIfExists('students');
     }
 };

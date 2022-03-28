@@ -5,20 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Job extends Model
+class Student extends Model
 {
     use HasFactory;
 
     protected $table='jobs';
-
     protected $primaryKey = 'id';
     public $timestamps = false;
-
-    
-
-    protected $guarded = [];
-   
     protected $fillable = [
+        
         'job_id',
         'JobTitle',
         'JobRole',
@@ -32,8 +27,6 @@ class Job extends Model
         'CreatedBy',
         'ApplyLink',
         'CloseDate',
-         ];
-
-
-         
+    ];
+    
 }

@@ -5,8 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Jobtype extends Model
+class Search extends Model
 {
     use HasFactory;
-    protected $table='jobtypes';
+
+    protected $table='jobs';
+  
 }

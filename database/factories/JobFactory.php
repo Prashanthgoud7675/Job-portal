@@ -19,17 +19,16 @@ class JobFactory extends Factory
         return [
             'JobId' => $this->faker->JobId(),
             'JobTitle' => $this->faker->JobTitle(),
+            'JobRole' => $this->faker->JobRole(),
             'Description' => $this->faker->Description(),
             'Positions' => $this->faker->Positions(),
             'Location' => $this->faker->Location(),
             'AnnualSalary' => $this->faker->AnnualSalary(),
-            'DeptId' => $this->faker->DeptId(),
-            'EmpId' => $this->faker->EmpId(),
+            'DeptName' => $this->faker->DeptName(),
             'Active' => $this->faker->Active(),
             'CreatedDate' => $this->faker->CreatedDate(),
             'CreatedBy' => $this->faker->CreatedBy(),
-            'Remarks' => $this->faker->Remarks(),
-            'JobsId' => $this->faker->JobsId(),
+            'ApplyLink' => $this->faker->ApplyLink(),
             'CloseDate' => $this->faker->CloseDate()
         ];
     }

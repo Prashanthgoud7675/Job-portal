@@ -32,7 +32,7 @@ class ApplicantFactory extends Factory
             'Address1' => $this->faker->Address1(),
             'Address2' => $this->faker->Address2(),
             'Pincode' => $this->faker->Pincode(),
-            'Remarks' => $this->faker->Remarks(),
+            'Remarks' => $this->faker->Rating(),
 
         ];
     }

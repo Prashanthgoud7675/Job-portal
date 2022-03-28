@@ -101,6 +101,7 @@
         .wrapper .section {
             width: 100%;
             height: 80px;
+            
             background-color:#C0C0C0;
 
 
@@ -110,6 +111,7 @@
 
         .wrapper .section .top_navbar .hamburger a {
             font-size: 28px;
+            
             color: #f4fbff;
 
         }
@@ -137,7 +139,7 @@
     </style>
 </head>
 
-<body class="bg-gray-100">
+<body >
 
     <div class="wrapper">
         <div class="section">
@@ -148,18 +150,28 @@
                         </div>
                         <div class="col-md-4" style="padding-top:2%">
                             <div class="search-container">
-                                <form action="/action_page.php">
-                                    <input type="text" placeholder=" " name="search" style="height:30px">
-                                    <button type="submit" style="background: #ccc;"><i class="fa fa-search"
-                                            style="font-size:25px;padding:2px"></i></button>
+                                <form action="{{ url('display') }}" method="GET" role="search">
 
+                                    <div class="input-group">
+                                       
+                                        <input type="text" class="form-control mr-2" name="term" placeholder="Search Jobs" id="term" >
+
+                                        <span >
+                                            <button class="btn btn-info active" type="submit" title="Search Jobs" >
+                                                <span class="fas fa-search" ></span>
+                                            </button>
+                                        </span>
+                                       
+                                    </div>
                                 </form>
+               
 
 
                             </div>
                         </div>
                         <div class="col-md-2" style="padding-top:1%">
-                            <button type="submit" style="font-size:30px;margin-right:15%;"><i class="fa fa-plus"
+                            <button type="submit" style="font-size:30px;margin-right:15%;">
+                                <i class="fa fa-plus"
                                     style="background-color:#F7DC6F;padding:8px;border-radius:50%"></i></button>
                             <button type="submit" style="font-size:30px"><i class="fa fa-bell"
                                     style="background-color:#F7DC6F;padding:8px;border-radius:50%"></i></button>
@@ -246,7 +258,7 @@
                         <h5 style="color:#f9f9f9;padding:5%"> RECRUITMENT</h5>
                         <br>
                         <li>
-                            <a href="jobs">
+                            <a href="display">
                                 <span class="icon"><i class="fas fa-briefcase"></i></span>
                                 <span class="item">Jobs</span>
                             </a>
@@ -267,7 +279,7 @@
                         <h5 style="color:#f9f9f9;padding:5%"> ORGANIZATION</h5>
                         <br>
                         <li>
-                            <a href="employee">
+                            <a href="{{route('employe.index')}}">
                                 <span class="icon"><i class="fas fa-user"></i></span>
                                 <span class="item">Employee</span>
                             </a>

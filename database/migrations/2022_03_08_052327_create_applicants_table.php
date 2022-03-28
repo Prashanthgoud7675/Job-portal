@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('applicants', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger(column:'Job_Id');
-            $table->unsignedBigInteger(column:'Applicant_Id');
+            $table->string(column:'Job_Id');
+            $table->string(column:'Applicant_Id');
             $table->string(column: 'First_Name');
             $table->string(column: 'Last_Name');
             $table->string(column: 'City');
@@ -30,7 +30,7 @@ return new class extends Migration
             $table->string(column: 'Address1');
             $table->string(column: 'Address2');
             $table->unsignedBigInteger(column: 'Pincode');
-            $table->string(column: 'Remarks');
+            $table->string(column: 'Rating');
             $table->timestamps();
         });
     }
