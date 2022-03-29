@@ -1,15 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ListingController;
+
 use App\Http\Controllers\AddjobController;
 use App\Http\Controllers\FullCalenderController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\EmployeController;
 use App\Http\Controllers\ApplicantController;
-use App\Http\Controllers\AddController;
 use App\Http\Controllers\StudentController;
-use App\Http\Controllers\MarketingController;
 use App\Http\Controllers\DisplayController;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 use App\Http\Controllers\SearchController;
@@ -54,15 +52,6 @@ Route::post('calender/action', [FullCalenderController::class, 'action']);
 Route::get('/candidates', [App\Http\Controllers\CandidatesController::class,'index']);
 
 
-
-Route::get('/addjob', function () {
-    return view('addjob');
-})->name('addjob');
-
-Route::post('/addjob', [AddjobController::class, 'store']);
-
-
-
 Route::get('index', function () {
     return view('index');
 })->name('index');
@@ -84,14 +73,12 @@ Route::get('apply', function () {
 Route::get('demo',[StudentController::class, 'index'])->name('add');
 Route::post('/save',[StudentController::class, 'save'])->name('save');
 
-Route::get('demo',[MarketingController::class, 'index'])->name('add');
-Route::post('/save',[MarketingController::class, 'save'])->name('save');
+
 
 Route::resource('/jobs', JobController::class);
 
 
 
-Route::get('demo', [App\Http\Controllers\TagController::class,'index']);
 
 Route::get('display', [App\Http\Controllers\SearchController::class,'index']);
 

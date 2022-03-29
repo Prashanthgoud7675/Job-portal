@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.js"></script>
+    
 </head>
 <body>
 <div class="row">
@@ -26,7 +27,7 @@
         
   <br><br>
 
-    <div id="calendar" style="margin-left:2%"></div>
+    <div id="calendar" style="margin-left:2%;"></div>
 
 </div>
 
@@ -87,6 +88,7 @@ $(document).ready(function () {
             var end = $.fullCalendar.formatDate(event.end, 'Y-MM-DD HH:mm:ss');
             var title = event.title;
             var id = event.id;
+            
             $.ajax({
                 url:"/calender/action",
                 type:"POST",

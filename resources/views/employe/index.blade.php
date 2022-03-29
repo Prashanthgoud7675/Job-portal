@@ -45,7 +45,7 @@
 
                                 @foreach ($data as $i)
                                     <tr>
-                                        <td> <a href="{{route('employe.show', $i->id)}}"> <b> {{ $i->Employee_Name }} </b> </a> <br><div class="text-muted"> {{$i->Position}} </div></td>
+                                        <td>  <b> {{ $i->Employee_Name }} </b> <br><div class="text-muted"> {{$i->Position}} </div></td>
                                         <td> <i class="	fa fa-envelope">  {{ $i->Email }}</i> <br> <i class="fa fa-phone">  {{$i->Mobile_Num}}</i> </td>
                                         <td>{{ $i->Team }}</td>
                                         <td>{{ $i->Date }}</td>
