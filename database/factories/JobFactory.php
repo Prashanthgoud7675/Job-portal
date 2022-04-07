@@ -24,7 +24,7 @@ class JobFactory extends Factory
             'Positions' => $this->faker->Positions(),
             'Location' => $this->faker->Location(),
             'AnnualSalary' => $this->faker->AnnualSalary(),
-            'DeptName' => $this->faker->DeptName(),
+            'deptshortname' => $this->faker->deptshortname(),
             'Active' => $this->faker->Active(),
             'CreatedDate' => $this->faker->CreatedDate(),
             'CreatedBy' => $this->faker->CreatedBy(),

@@ -61,8 +61,10 @@ $(document).ready(function () {
             if(title)
             {
                 var start = $.fullCalendar.formatDate(start, 'Y-MM-DD HH:mm:ss');
+                
 
                 var end = $.fullCalendar.formatDate(end, 'Y-MM-DD HH:mm:ss');
+                
 
                 $.ajax({
                     url:"/calender/action",
@@ -86,6 +88,7 @@ $(document).ready(function () {
         {
             var start = $.fullCalendar.formatDate(event.start, 'Y-MM-DD HH:mm:ss');
             var end = $.fullCalendar.formatDate(event.end, 'Y-MM-DD HH:mm:ss');
+        
             var title = event.title;
             var id = event.id;
             
@@ -95,7 +98,9 @@ $(document).ready(function () {
                 data:{
                     title: title,
                     start: start,
+                    
                     end: end,
+                  
                     id: id,
                     type: 'update'
                 },
@@ -118,7 +123,9 @@ $(document).ready(function () {
                 data:{
                     title: title,
                     start: start,
+                   
                     end: end,
+                   
                     id: id,
                     type: 'update'
                 },

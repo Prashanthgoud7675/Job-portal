@@ -82,11 +82,11 @@
                                 name="AnnualSalary" :value="old('AnnualSalary')" required />
                         </div>
                         <div>
-                            <x-label for="Dept_id" :value="__('Dept_id')" />
+                            <x-label for="deptshortname" :value="__('deptshortname')" />
 
-                            <x-input id="Dept_id" class="block mt-1 w-full h-10"
-                                style="background-color:rgb(243, 235, 235);width:500px" type="string" name="Dept_id"
-                                :value="old('Dept_id')" required autofocus />
+                            <x-input id="deptshortname" class="block mt-1 w-full h-10"
+                                style="background-color:rgb(243, 235, 235);width:500px" type="string" name="deptshortname`"
+                                :value="old('deptshortname')" required autofocus />
                         </div>
 
 

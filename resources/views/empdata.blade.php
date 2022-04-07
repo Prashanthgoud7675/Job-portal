@@ -60,7 +60,7 @@
            
            
 
-           <h3 style="margin-top: 5%; margin-left:7%; margin-bottom:5%"><i class="	fa fa-envelope">  {{ $i->Email }}</i> <br> <i class="fa fa-phone">  {{$i->Mobile_Num}}</i></h3>
+           <h3 style="margin-top: 5%; margin-left:7%; margin-bottom:5%"><i class="	fa fa-envelope">  </i> {{ $i->Email }} <br> <i class="fa fa-phone"> </i> {{$i->Mobile_Num}} </h3>
 
            </div>
            

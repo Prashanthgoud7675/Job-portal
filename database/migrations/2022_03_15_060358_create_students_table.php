@@ -22,7 +22,7 @@ return new class extends Migration
             $table->unsignedBigInteger(column: 'Positions');
             $table->text(column: 'Location');
             $table->unsignedBigInteger(column: 'AnnualSalary');
-            $table->string(column: 'Dept_id');
+            $table->string(column: 'deptshortname');
             $table->unsignedBigInteger(column: 'Active');
             $table->date(column: 'CreatedDate');
             $table->string(column: 'CreatedBy');

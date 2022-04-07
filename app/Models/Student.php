@@ -21,7 +21,7 @@ class Student extends Model
         'Positions',
         'Location',
         'AnnualSalary',
-        'Dept_id',
+        'deptshortname',
         'Active',
         'CreatedDate',
         'CreatedBy',

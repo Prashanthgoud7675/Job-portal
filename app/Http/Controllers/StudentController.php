@@ -23,7 +23,7 @@ class StudentController extends Controller
             'Positions' => 'required',
             'Location' => 'required',
             'AnnualSalary' => 'required',
-            'Dept_id' => 'required',
+            'deptshortname' => 'required',
             'Active' => 'required',
             'CreatedDate' => 'required',
             'CreatedBy' => 'required',
@@ -40,13 +40,14 @@ class StudentController extends Controller
         $Positions = $request->Positions;
         $Location = $request->Location;
         $AnnualSalary = $request->AnnualSalary;
-        $Dept_id = $request->Dept_id;
+        $deptshortname = $request->deptshortname;
         $Active = $request->Active;
         $CreatedDate = $request->CreatedDate;
         $CreatedBy = $request->CreatedBy;
         $ApplyLink = $request->ApplyLink;
         $CloseDate = $request->CloseDate;
-
+        
+        
         $job_id = Helper::IDGenerator(new Student, 'job_id', 2, 'DV22'); /** Generate id */
         $q = new Student;
         $q->job_id = $job_id;
@@ -56,7 +57,7 @@ class StudentController extends Controller
         $q->Positions = $Positions;
         $q->Location = $Location;
         $q->AnnualSalary = $AnnualSalary;
-        $q->Dept_id = $Dept_id;
+        $q->deptshortname = $deptshortname;
         $q->Active = $Active;
         $q->CreatedDate = $CreatedDate;
         $q->CreatedBy = $CreatedBy;

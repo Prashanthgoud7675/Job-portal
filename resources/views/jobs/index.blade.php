@@ -45,7 +45,7 @@
                                     <th>Positions</th>
                                     <th>Location</th>
                                     <th>AnnualSalary</th>
-                                    <th>Dept_id</th>   
+                                    <th>deptshortname</th>   
                                     <th>Active</th>
                                     <th>CreatedDate</th>
                                     <th>CreatedBy</th>
@@ -64,7 +64,7 @@
                                         <td>{{ $i->Positions }}</td>
                                         <td>{{ $i->Location }}</td>
                                         <td>{{ $i->AnnualSalary }}</td>
-                                        <td>{{ $i->Dept_id }}</td> 
+                                        <td>{{ $i->deptshortname }}</td> 
                                         <td>{{ $i->Active }}</td>
                                         <td>{{ $i->CreatedDate }}</td>
                                         <td>{{ $i->CreatedBy }}</td>

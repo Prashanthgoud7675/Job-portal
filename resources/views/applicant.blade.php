@@ -5,6 +5,25 @@
 
 
 @section('content')
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <title>jQuery UI Draggable - Default functionality-codecheef.org</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <style>
+    .list-group { 
+        width: 225px;
+        height: 150px;
+        padding: 0.5em;
+    }
+  </style>
+</head>
+<body>
     <div class="top">
         <div class="container"
             style="  width: 0px; height: 5vh; display: flex; margin-left:20%;margin-right:15%;margin-top:2%">
@@ -51,155 +70,258 @@
 
                 <h3 style="font-size:20px;margin-top:-4%">
                     Total Candidates: <sapn style="background-color: #b34d4d; padding-left:7%;padding-right:7%">
-                        {{ $count }} </span> </h3>
+                        5</span> </h3>
             </div>
         </div>
     </div>
 
 
-    <div class="modal" id="todo_form">
-        <div class="header">
-            <div class="title">Add Todo</div>
-            <button class="btn close-modal">&times;</button>
-        </div>
-        <div class="body">
-            <input type="text" id="todo_input" />
-            <input type="submit" value="Add Todo" id="todo_submit" />
-        </div>
-    </div>
 
-    <div class="todo-container" style="  width: 1000px; height: 90vh; display: flex; margin-left:20%;margin-top:5%">
+    <div  style="  width: 1000px; height: 90vh; display: flex; margin-left:20%;margin-top:5%">
         <div class="status" id="no_status">
-            <div class="card" style="width: 15rem;">
-                <hr style="height:7px;background-color:#0080ff">
-                <h3 style="margin-left:5%;margin-top:3%;margin-bottom:3%"> New Applied</h3>
-                <h3 style="margin-left:80%;margin-top:-9%;margin-bottom:3%">{{ $count }}</h3>
+            <div class="card" style="width: 14rem; border-top: 8px solid #0080ff">
+               
+               <div style="display: flex">
+                <h5 style="margin-left:5%"> New Applied</h5>
+                <h5 style="margin-left: 10%">0</h5>
+               </div>
             </div>
-            <div class="todo" draggable="true"><br>
-                @foreach ($data as $i)
-                    <div class="card" style="height:140px;">
+            <div>
 
-                        <img src={{ $i->Profile_url }} style="margin-top: 7%;margin-left:5%" class="rounded-circle"
-                            height="40px" width="40px">
+                <ul class="list-group connectedSortable" id="padding-item-drop">
+                    @if(!empty($panddingItem) && $panddingItem->count())
+                      @foreach($panddingItem as $key => $value)
+                      <li class="list-group-item " item-id="{{ $value->id }}">
+                        <div  >
+                            <div style="display:flex">
+                        <img src= "{{ $value->Profile_url }}" style="margin-top: %;margin-left:%; border-radius:50%;height:50px; width:50px">
+                        
+                        <p style="margin-left:10%;margin-bottom:%:;font-size:16px">{{ $value->First_Name }} {{ $value->Last_Name }}</p>
+                        </div>
+                        
+                        <div style="display:flex;margin-top:15%">
+        
+                    
+                    <div class="overlay" style="position: relative; margin-left:-5%; color:#F4D03F;font-size:13px">
+        
+                        @while ($value->Rating > 0)
+                            @if ($value->Rating > 0.5)
+                                <i class="fas fa-star"></i>
+                            @else
+                                <i class="fas fa-star-half"></i>
+                            @endif
+                            @php $value->Rating--; @endphp
+                        @endwhile
+        
+                    </div>
+                    <h4 style="margin-left:12%;margin-top:2%;font-size:13px">5 years Exp</h4>
+        </div>
+        </div>
+                    </li>
+                    <br>
+                      @endforeach
+                    @endif
+                  </ul>
+              
+            </div>
+        </div>
+        <div class="status" style="margin-left:3%">
+            <div class="card" style="width: 14rem;border-top: 8px solid #008B8B">
+ 
+                <div style="display: flex">
+                  <h5 style="margin-left:5%"> Screening</h5>
+                  <h5 style="margin-left: 10%">0</h5>
+                 </div>
+            </div>
+                <div>
 
-                        <h1 style="margin-left:35%;margin-top:-18%;">{{ $i->First_Name }} {{ $i->Last_Name }}</h1>
-                        <h4 style="margin-left:5%;margin-top:15%">5 years Exp</h4>
-                        <p style="padding-bottom:-7%">
-
-
-                        <div class="overlay" style="position: relative; margin-left:5%; color:#F4D03F;">
-
-                            @while ($i->Rating > 0)
-                                @if ($i->Rating > 0.5)
+                    <ul class="list-group  connectedSortable" id="complete-item-drop">
+                        @if(!empty($completeItem) && $completeItem->count())
+                          @foreach($completeItem as $key => $value)
+                          <li class="list-group-item " item-id="{{ $value->id }}">
+                            <div  >
+                                <div style="display:flex">
+                            <img src= "{{ $value->Profile_url }}" style=" border-radius:50%;height:50px; width:50px">
+                            
+                            <p style="margin-left:10%;margin-bottom:%:;font-size:16px">{{ $value->First_Name }} {{ $value->Last_Name }}</p>
+                            </div>
+                            
+                            <div style="display:flex;margin-top:15%">
+            
+                        
+                        <div class="overlay" style="position: relative; margin-left:-5%; color:#F4D03F;font-size:13px">
+            
+                            @while ($value->Rating > 0)
+                                @if ($value->Rating > 0.5)
                                     <i class="fas fa-star"></i>
                                 @else
                                     <i class="fas fa-star-half"></i>
                                 @endif
-                                @php $i->Rating--; @endphp
+                                @php $value->Rating--; @endphp
                             @endwhile
-
+            
                         </div>
-                        </p>
+                        <h4 style="margin-left:12%;margin-top:2%;font-size:13px">5 years Exp</h4>
+            </div>
+            </div>
+                        </li>
+                        <br>
+                          @endforeach
+                        @endif
+                      </ul>
 
-                        <span class="close">&times;</span>
+                </div>
+        </div>
 
+        <div class="status" style="margin-left:3%">
+            <div class="card" style="width: 14rem;border-top: 8px solid #b34d4d">
+                
+                <div style="display: flex">
+                  <h5 style="margin-left:5%"> Interview </h5>
+                  <h5 style="margin-left: 10%">0</h5>
+                 </div>
+            </div>
 
+            <div>
 
-
-
-
+                <ul class="list-group  connectedSortable" id="good-item-drop">
+                    @if(!empty($goodItem) && $goodItem->count())
+                      @foreach($goodItem as $key => $value)
+                      <li class="list-group-item " item-id="{{ $value->id }}">
+                        <div  >
+                            <div style="display:flex">
+                        <img src= "{{ $value->Profile_url }}" style="margin-top: %;margin-left:%; border-radius:50%;height:50px; width:50px">
+                        
+                        <p style="margin-left:10%;margin-bottom:-35%:;font-size:16px">{{ $value->First_Name }} {{ $value->Last_Name }}</p>
+                        </div>
+                        
+                        <div style="display:flex;margin-top:15%">
+        
+                    
+                    <div class="overlay" style="position: relative; margin-left:-5%; color:#F4D03F;font-size:13px">
+        
+                        @while ($value->Rating > 0)
+                            @if ($value->Rating > 0.5)
+                                <i class="fas fa-star"></i>
+                            @else
+                                <i class="fas fa-star-half"></i>
+                            @endif
+                            @php $value->Rating--; @endphp
+                        @endwhile
+        
                     </div>
+                    <h4 style="margin-left:12%;margin-top:2%;font-size:13px">5 years Exp</h4>
+        </div>
+        </div>
+                    </li>
                     <br>
-                @endforeach
-
+                      @endforeach
+                    @endif
+                  </ul>
 
             </div>
         </div>
+
+
+
         <div class="status" style="margin-left:3%">
-            <div class="card" style="width: 15rem;">
-                <hr style="height:7px;background-color:#008B8B">
-                <h3 style="margin-left:5%;margin-top:3%;margin-bottom:3%"> Screening</h3>
-                <h3 style="margin-left:80%;margin-top:-9%;margin-bottom:3%"> 0</h3>
-
-
+            <div class="card" style="width: 14rem;border-top: 8px solid #00ffff">
+              
+                <div style="display: flex">
+                  <h5 style="margin-left:5%"> Hired </h5>
+                  <h5 style="margin-left: 10%">0</h5>
+                 </div>
             </div>
+        
+        <div>
 
-
-
-
+            <ul class="list-group  connectedSortable" id="candidate-item-drop">
+                @if(!empty($candidate) && $candidate->count())
+                  @foreach($candidate as $key => $value)
+                  <li class="list-group-item " item-id="{{ $value->id }}">
+                    <div  >
+                        <div style="display:flex">
+                    <img src= "{{ $value->Profile_url }}" style="margin-top: %;margin-left:%; border-radius:50%;height:50px; width:50px">
+                    
+                    <p style="margin-left:10%;margin-bottom:-35%:;font-size:16px">{{ $value->First_Name }} {{ $value->Last_Name }}</p>
+                    </div>
+                    
+                    <div style="display:flex;margin-top:15%">
+    
+                
+                <div class="overlay" style="position: relative; margin-left:-5%; color:#F4D03F;font-size:13px">
+    
+                    @while ($value->Rating > 0)
+                        @if ($value->Rating > 0.5)
+                            <i class="fas fa-star"></i>
+                        @else
+                            <i class="fas fa-star-half"></i>
+                        @endif
+                        @php $value->Rating--; @endphp
+                    @endwhile
+    
+                </div>
+                <h4 style="margin-left:12%;margin-top:2%;font-size:13px">5 years Exp</h4>
+    </div>
+    </div>
+                </li>
+                <br>
+                  @endforeach
+                @endif
+              </ul>
+             
         </div>
-        <div class="status" style="margin-left:3%">
-            <div class="card" style="width: 15rem;">
-                <hr style="height:7px;background-color:#b34d4d">
-                <h3 style="margin-left:5%;margin-top:3%;margin-bottom:3%"> Interviews</h3>
-                <h3 style="margin-left:80%;margin-top:-9%;margin-bottom:3%"> 0</h3>
-            </div>
-        </div>
-        <div class="status" style="margin-left:3%">
-            <div class="card" style="width: 15rem;">
-                <hr style="height:7px;background-color:#00ffff">
-                <h3 style="margin-left:5%;margin-top:3%;margin-bottom:3%"> Hired</h3>
-                <h3 style="margin-left:80%;margin-top:-9%;margin-bottom:3%"> 0</h3>
-            </div>
-        </div>
+        
+
     </div>
 
     <div id="overlay"></div>
 
-
-
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
-        const todos = document.querySelectorAll(".todo");
-        const all_status = document.querySelectorAll(".status");
-        let draggableTodo = null;
+    $( function() {
+      $( "#padding-item-drop, #complete-item-drop, #good-item-drop,#candidate-item-drop" ).sortable({
+        connectWith: ".connectedSortable",
+        opacity: 0.5,
+      });
+      $( ".connectedSortable" ).on( "sortupdate", function( event, ui ) {
+          var NewApplied = [];
+          var Screening = [];
+          var Interview = [];
+          var Hired = [];
+          $("#padding-item-drop li").each(function( index ) {
+            if($(this).attr('item-id')){
+              NewApplied[index] = $(this).attr('item-id');
+            }
+          });
+          $("#complete-item-drop li").each(function( index ) {
+            Screening[index] = $(this).attr('item-id');
+          });
+          $("#good-item-drop li").each(function( index ) {
+              Interview[index] = $(this).attr('item-id');
+            });
+            $("#candidate-item-drop li").each(function( index ) {
+                Hired[index] = $(this).attr('item-id');
+              });
+          $.ajax({
+              url: "{{ route('update.items') }}",
+              method: 'POST',
+              headers: {
+                  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+              },
+              data: {NewApplied:NewApplied,Screening:Screening,Interview:Interview,Hired:Hired},
+              success: function(data) {
+                console.log('success');
+              }
+          });
+            
+      });
+    });
+  </script>
 
-        todos.forEach((todo) => {
-            todo.addEventListener("dragstart", dragStart);
-            todo.addEventListener("dragend", dragEnd);
-        });
+</body>
+</html>
 
-        function dragStart() {
-            draggableTodo = this;
-            setTimeout(() => {
-                this.style.display = "none";
-            }, 0);
-            console.log("dragStart");
-        }
-
-        function dragEnd() {
-            draggableTodo = null;
-            setTimeout(() => {
-                this.style.display = "block";
-            }, 0);
-            console.log("dragEnd");
-        }
-
-        all_status.forEach((status) => {
-            status.addEventListener("dragover", dragOver);
-            status.addEventListener("dragenter", dragEnter);
-            status.addEventListener("dragleave", dragLeave);
-            status.addEventListener("drop", dragDrop);
-        });
-
-        function dragOver(e) {
-            e.preventDefault();
-            console.log("dragOver");
-        }
-
-        function dragEnter() {
-            this.style.border = "1px dashed #ccc";
-            console.log("dragEnter");
-        }
-
-        function dragLeave() {
-            this.style.border = "none";
-            console.log("dragLeave");
-        }
-
-        function dragDrop() {
-            this.style.border = "none";
-            this.appendChild(draggableTodo);
-            console.log("dropped");
-        }
-    </script>
-@endsection
+    @endsection

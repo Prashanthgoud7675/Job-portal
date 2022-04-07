@@ -15,9 +15,11 @@ return new class extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->integer('order');
-            $table->tinyInteger('status');
+            $table->string(column: 'First_Name');
+            $table->string(column: 'Last_Name');
+            $table->string(column: 'Profile_url')->nullable();
+            $table->string(column: 'Rating');
+            $table->integer(column: 'Status');
             $table->timestamps();
         });
     }

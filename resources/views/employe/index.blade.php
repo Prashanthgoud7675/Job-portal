@@ -46,7 +46,7 @@
                                 @foreach ($data as $i)
                                     <tr>
                                         <td>  <b> {{ $i->Employee_Name }} </b> <br><div class="text-muted"> {{$i->Position}} </div></td>
-                                        <td> <i class="	fa fa-envelope">  {{ $i->Email }}</i> <br> <i class="fa fa-phone">  {{$i->Mobile_Num}}</i> </td>
+                                        <td> <i class="	fa fa-envelope"> </i>  {{ $i->Email }} <br> <i class="fa fa-phone">  </i> {{$i->Mobile_Num}} </td>
                                         <td>{{ $i->Team }}</td>
                                         <td>{{ $i->Date }}</td>
                                         <td ><h3 class="text-center" style="border:solid #01DFA5; margin-right:15%; padding-top:4%; padding-bottom:4%; color:#01DFA5; border-radius:2px; font-size:15px"> <b>{{ $i->Status }} </b> </h3></td>

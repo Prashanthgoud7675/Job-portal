@@ -9,14 +9,17 @@ class FullCalenderController extends Controller
 {
     public function index(Request $request)
     {
+		$data = Event::all();
     	if($request->ajax())
     	{
     		$data = Event::whereDate('start', '>=', $request->start)
+			           
                        ->whereDate('end',   '<=', $request->end)
+					   
                        ->get(['id', 'title', 'start', 'end']);
             return response()->json($data);
     	}
-    	return view('calender');
+    	return view('calender',['data' => $data]);
     }
 
     public function action(Request $request)
@@ -28,7 +31,7 @@ class FullCalenderController extends Controller
     			$event = Event::create([
     				'title'		=>	$request->title,
     				'start'		=>	$request->start,
-    				'end'		=>	$request->end
+    				'end'		=>	$request->end,
     			]);
 
     			return response()->json($event);

@@ -28,8 +28,10 @@ use App\Http\Controllers\SearchController;
    // ->name( name: 'listings.index');
 
 Route::get('/', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+   return view('dashboard');
+ })->middleware(['auth'])->name('dashboard');
+
+ Route::get('/', [App\Http\Controllers\DashboardController::class,'index'])->middleware(['auth']);
 
 
 Route::get('/display', function () {
@@ -37,10 +39,6 @@ Route::get('/display', function () {
 })->name('display');
 
 Route::get('/display', [App\Http\Controllers\DisplayController::class,'index']);
-
-
-
-Route::get('/applicant', [App\Http\Controllers\ApplicantController::class,'index']);
 
 
 Route::get('calender', [FullCalenderController::class, 'index']);
@@ -87,6 +85,11 @@ Route::resource('/employe', EmployeController::class);
 
 Route::get('empdata', [App\Http\Controllers\EmpdataController::class,'index']);
 
+Route::get('settings', function () {
+    return view('settings');
+})->name('settings');
 
 
+Route::get('applicant', [ApplicantController::class,'itemView']);
+Route::post('/update-items', [ApplicantController::class, 'updateItems'])->name('update.items');
 require __DIR__.'/auth.php';

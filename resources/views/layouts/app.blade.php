@@ -240,60 +240,64 @@
 
                         </li>
                         <br>
+                        
                         <hr style="color:#fed758;height:2px">
+                        
                         <br>
                         <li>
-                            <a href="/">
+                            <a href="/" style="text-decoration: none">
                                 <span class="icon"><i class="fa fa-dashboard"></i></span>
-                                <span class="item">Dashboard</span>
+                                <span class="item" style="font-size: 15px">Dashboard</span>
                             </a>
                         </li>
                         <li>
-                            <a href="calender">
+                            <a href="calender" style="text-decoration: none">
                                 <span class="icon"><i class="fas fa-calendar-alt"></i></span>
-                                <span class="item">Calender</span>
+                                <span class="item" style="font-size: 15px">Calender</span>
                             </a>
                         </li>
                         <br>
+                        
                         <h5 style="color:#f9f9f9;padding:5%"> RECRUITMENT</h5>
-                        <br>
+                        
                         <li>
-                            <a href="display">
+                            <a href="display" style="text-decoration: none">
                                 <span class="icon"><i class="fas fa-briefcase"></i></span>
-                                <span class="item">Jobs</span>
+                                <span class="item" style="font-size: 15px">Jobs</span>
                             </a>
                         </li>
                         <li>
-                            <a href="candidates">
+                            <a href="candidates" style="text-decoration: none">
                                 <span class="icon"><i class="fas fa-user-friends"></i></span>
-                                <span class="item">Candidates</span>
+                                <span class="item" style="font-size: 15px">Candidates</span>
                             </a>
                         </li>
                         <li>
-                            <a href="referrals">
+                            <a href="referrals" style="text-decoration: none">
                                 <span class="icon"><i class="fas fa-clone"></i></span>
-                                <span class="item">My Referrals</span>
+                                <span class="item" style="font-size: 15px">My Referrals</span>
                             </a>
                         </li>
                         <br>
+                        
                         <h5 style="color:#f9f9f9;padding:5%"> ORGANIZATION</h5>
-                        <br>
+                        
                         <li>
-                            <a href="{{route('employe.index')}}">
+                            <a href="{{route('employe.index')}}" style="text-decoration: none">
                                 <span class="icon"><i class="fas fa-user"></i></span>
-                                <span class="item">Employee</span>
+                                <span class="item" style="font-size: 15px">Employee</span>
                             </a>
                         </li>
                         <li>
-                            <a href="structure">
+                            <a href="structure" style="text-decoration: none">
                                 <span class="icon"><i class="fas fa-sitemap"></i></span>
-                                <span class="item">Structure</span>
+                                <span class="item" style="font-size: 15px">Structure</span>
                             </a>
                         </li>
                         <li>
-                            <a href="settings">
+                            <a href="settings" style="text-decoration: none">
                                 <span class="icon"><i class="fas fa-cog"></i></span>
-                                <span class="item">Settings</span>
+                                <span class="item" style="font-size: 17px">Settings</span>
                             </a>
                         </li>
                     </ul>
