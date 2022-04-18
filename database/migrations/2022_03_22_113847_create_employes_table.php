@@ -23,6 +23,7 @@ return new class extends Migration
             $table->date(column: 'Date');
             $table->string(column: 'Status');
             $table->string(column: 'Profile_url')->nullable();
+            $table->string('Remarks')->nullable();
             $table->timestamps();
         });
     }

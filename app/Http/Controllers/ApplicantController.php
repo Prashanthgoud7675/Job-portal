@@ -12,6 +12,7 @@ class ApplicantController extends Controller
 
   public function itemView()
 	{
+		$count = Item::count();
 		$panddingItem = Item::where('status', 0)
 			->orderBy('Rating')
 			->get();
@@ -25,7 +26,7 @@ class ApplicantController extends Controller
     $candidate = Item::where('status', '3')
 			->orderBy('Rating')
 			->get();  
-		return view('applicant', compact('panddingItem', 'completeItem', 'goodItem', 'candidate'));
+		return view('applicant', compact('panddingItem', 'completeItem', 'goodItem', 'candidate', 'count'));
 	}
 	public function updateItems(Request $request)
 	{

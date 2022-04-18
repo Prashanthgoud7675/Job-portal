@@ -3,18 +3,20 @@
 
 @section('content')
 
+<div class="main_container" style=" width: (100% - 70px);
+margin-left: %; ">
+
 
         
 
         <div class="row">
-            <div class="col-md-2">
-            </div>
+           
 
             
             <div class="col-md-9">
 
 
-<div class="card" style="width: 500px;height:300px">
+<div class="card" style="width: 600px;height:300px">
 
   <h1>{{$employe->Employee_Name}}
     
@@ -51,4 +53,5 @@
 
             </div>
         </div>
+      </div>
         @endsection

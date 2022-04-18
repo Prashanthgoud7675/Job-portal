@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string(column: 'Last_Name');
             $table->string(column: 'Profile_url')->nullable();
             $table->string(column: 'Rating');
+            $table->string(column: 'Remarks')->nullable();
             $table->integer(column: 'Status');
             $table->timestamps();
         });

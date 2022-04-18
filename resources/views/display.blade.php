@@ -1,12 +1,14 @@
 @extends('layouts.app')
 
-
 @section('content')
+
+<div class="main_container" style=" width: (100% - 70px);
+margin-left: %; ">
 
 
 <div class="top">
-    <div class="container"
-        style="  width: 0px; height: 5vh; display: flex; margin-left:20%;margin-right:15%;margin-top:5%">
+    <div 
+        style="  width: 0px; height: 5vh; display: flex; margin-left:0%;margin-right:0%;margin-top:5%">
         <div class="status" id="no_status">
             <div style="width: 13rem;">
 
@@ -52,9 +54,8 @@
     <br>
 
     <div class="row">
-        <div class="col-md-2" >
-        </div>
-        <div class="col-md-10">
+        
+        <div class="col-md-12">
    <div class="product" style="display: flex; flex-direction:row;">
       
        @foreach ($data as $i)
@@ -104,6 +105,7 @@
 
       
    </div>
+</div>
 
            
 @endsection

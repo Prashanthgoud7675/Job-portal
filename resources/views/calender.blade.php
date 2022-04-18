@@ -19,13 +19,16 @@
     
 </head>
 <body>
-<div class="row">
-    <div class="col-md-2">
-    </div>
 
-    <div class="col-md-9" >
+    <div class="main_container" style=" width: (100% - 70px);
+margin-left: %; ">
+
+<div class="row">
+    
+
+    <div class="col-md-12" >
         
-  <br><br>
+  <br>
 
     <div id="calendar" style="margin-left:2%;"></div>
 
@@ -34,6 +37,7 @@
 <div class="col-md-1">
 </div>
 </div>
+    </div>
 <script>
 
 $(document).ready(function () {

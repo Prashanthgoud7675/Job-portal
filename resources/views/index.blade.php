@@ -2,83 +2,178 @@
 
 
 @section('content')
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-2">
-        </div>
-        <div class="col-md-9">
-            <div class="card">
-                <div class="card-header">Jobs</div>
-                <div class="card-body">
-                    <a href="{{ route('addjob') }}" class="btn btn-success btn-sm" title="Add New Job">
-                        <i class="fa fa-plus" aria-hidden="true"></i> ADD JOB
-                    </a>
-                    <br />
-                    <br />
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>JobId</th>
-                                    <th>JobTitle</th>
-                                    <th>Description</th>
-                                    <th>Positions</th>
-                                    <th>Location</th>
-                                    <th>AnnualSalary</th>
-                                    <th>DeptId</th>
-                                    <th>EmpID</th>
-                                    <th>Active</th>
-                                    <th>CreatedDate</th>
-                                    <th>Created_By</th>
-                                    <th>Remarks</th>
-                                    <th>JobsId</th>
-                                    <th>CloseDate</th>
-                                    
-                                    
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($data as $i)
-                                    <tr>
-                                        <td>{{ $i->iteration }}</td>
-                                        <td>{{ $i->JobId }}</td>
-                                        <td>{{ $i->JobTitle }}</td>
-                                        <td>{{ $i->Description }}</td>
-                                        <td>{{ $i->Positions }}</td>
-                                        <td>{{ $i->Location }}</td>
-                                        <td>{{ $i->AnnualSalary }}</td>
-                                        <td>{{ $i->DeptId }}</td>
-                                        <td>{{ $i->EmpId }}</td>
-                                        <td>{{ $i->Active }}</td>
-                                        <td>{{ $i->CreatedDate }}</td>
-                                        <td>{{ $i->Created_By }}</td>
-                                        <td>{{ $i->Remarks }}</td>
-                                        <td>{{ $i->JobsId }}</td>
-                                        <td>{{ $i->CloseDate }}</td>
-                                        <td>
-                                           
-                                            <form action="{{route('addjob' , $i->id)}}" method="post">
-                                                <a class="btn btn-primary" href="edit">Edit</a>
-
-                                                @csrf
-                                                @method('DELETE')
-
-                                                <button type="submit" class="btn btn-danger">Delete</button>
+    <div class="main_container" style=" width: (100% - 70px);">
+        <div class="row">
+            <div class="col-md-8">
+                <div style="background-color: whitesmoke;">
 
 
-                                            </form>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+
+
+                    <div style="display:flex">
+
+                        <h1 style="margin-top:2%">Hiring Pipeline</h1>
+
+
+                        <h5 style="margin-left:50%;margin-top:2%">ViewAllJobs</h5>
+                    </div>
+
+                    <hr>
+
+                    <div style="display:flex">
+                        <div class="status" id="no_status" style="margin-top:2%;margin-left:5%">
+                            <div style="width: 6rem;">
+
+                                <h3>Jobs</h3>
+                            </div>
+
+
+                        </div>
+
+                        <div class="status" style="width: 6rem; margin-left:6%;margin-top:2%">
+
+                            <h3>New Applied</h3>
+
+
+
+                        </div>
+                        <div class="status" style="width: 6rem; margin-left:11%;margin-top:2%">
+
+                            <h3>Screening</h3>
+
+
+                        </div>
+                        <div class="status" style="width: 6rem; margin-left:10%;margin-top:2%">
+
+
+                            <h3>
+                                Interview </h3>
+
+
+                        </div>
+
+                        <div class="status" style="width: 6rem; margin-left:9%;margin-top:2%;color:ash">
+
+
+                            <h3>
+                                Hired </h3>
+
+
+                        </div>
+                    </div>
+
+
+                    @foreach ($dept as $i)
+                        <div style="display:flex">
+                            <div class="col-sm-2" style="margin-left:1%;margin-top:3%">
+
+
+
+                                <h1 style="margin-left:2%;font-weight:700">{{ $i->deptname }}</h1>
+                                <br>
+
+                            </div>
+
+                            <div class="col-sm-2" style="margin-left:5%">
+                                <br>
+                                <div class="card" style="width: 6rem; height:35px ;">
+
+
+                                </div>
+                            </div>
+                            <div class="col-sm-2" style="margin-left:5%">
+                                <br>
+                                <div class="card" style="width: 6rem; height:35px;">
+
+                                </div>
+                            </div>
+
+                            <div class="col-sm-2" style="margin-left:5%">
+                                <br>
+                                <div class="card" style="width: 6rem; height:35px;">
+
+                                </div>
+                            </div>
+                            <div class="col-sm-2" style="margin-left:4%">
+
+
+                                <br>
+                                <div class="card" style="width: 6rem; height:35px;">
+
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        
+                    @endforeach
+                    
+                
+
+
+                </div>
+
+                <br>
+
+            </div>
+
+
+            <div class="col-md-4" >
+                <div style="background-color: whitesmoke">
+                    
+                    <div class="flex">
+                       <b> <p>Employee</p> </b>
+                       <p style="margin-left: 10px">View All</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
+
+
+        <br>
+
+        <div class="row">
+            <div class="col-md-8">
+                <div style="display:flex;margin-top:0%;margin-left:0%;background-color:whitesmoke;padding:2%">
+                    <h3>My Task</h3>
+                    <h3 style="margin-left:80%"> Add Task</h3>
+                </div>
+                <br>
+
+                @foreach ($data as $i)
+                    <div style="background-color:whitesmoke">
+                        <div style="display:flex">
+                            <hr style="height:43px;width:5px;color:blue">
+                            <h1 style="margin-left:3%;margin-top:1%"> {{ $i->start }} :: {{ $i->end }} </h1>
+
+                            <h1 style="margin-left:43%;margin-top:2%">{{ $i->title }}</h1>
+
+
+                        </div>
+                    </div>
+                    <br>
+                @endforeach
+            </div>
+
+            <div class="col-md-4">
+                <div style="background-color: whitesmoke">
+                    
+                    <div class="flex">
+                        <b> <p>Employee</p> </b>
+                        <p style="margin-left: 100px">View All</p>
+                     </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+
+    </div>
 @endsection

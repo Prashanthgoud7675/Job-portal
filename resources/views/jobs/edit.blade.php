@@ -3,6 +3,9 @@
 
 @section('content')
 
+<div class="main_container" style=" width: (100% - 70px);
+margin-left: %; ">
+
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div >
@@ -127,6 +130,7 @@
     </div>
 
 </form>
+</div>
 </div>
 
 @endsection

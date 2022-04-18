@@ -3,16 +3,18 @@
 
 @section('content')
 <br>
+
+<div class="main_container" style=" width: (100% - 70px);
+margin-left: %; ">
     <div class="container">
 
         
 
         <div class="row">
-            <div class="col-md-2">
-            </div>
+           
 
             
-            <div class="col-md-9">
+            <div class="col-md-12">
 
                 <div style="display: flex">
                     <h1 style="font-size: 27px; font-weight:600">{{$count}}  Employees</h1> 
@@ -28,9 +30,9 @@
 
             
             
-                <div class="card">
+                <div>
     
-                    <div class="card-body">
+                    <div style="background-color:whitesmoke">
                         
                             <table class="table">
 
@@ -62,4 +64,5 @@
             </div>
         </div>
     </div>
+</div>
 @endsection

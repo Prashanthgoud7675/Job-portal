@@ -2,11 +2,12 @@
 
 
 @section('content')
+<div class="main_container" style=" width: (100% - 70px);
+margin-left: %; ">
 
 <div class="row">
-    <div class="col-md-2">
-    </div>
-    <div class="col-md-10 ">
+    
+    <div class="col-md-12 ">
         <div >
             <h2>Create New Job</h2>
         </div>
@@ -125,6 +126,7 @@
 </form>
 </div>
 
+</div>
 </div>
 </div>
 

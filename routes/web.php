@@ -6,6 +6,8 @@ use App\Http\Controllers\AddjobController;
 use App\Http\Controllers\FullCalenderController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\EmployeController;
+use App\Http\Controllers\DeptController;
+use App\Http\Controllers\EmpController;
 use App\Http\Controllers\ApplicantController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\DisplayController;
@@ -28,15 +30,19 @@ use App\Http\Controllers\SearchController;
    // ->name( name: 'listings.index');
 
 Route::get('/', function () {
-   return view('dashboard');
- })->middleware(['auth'])->name('dashboard');
+   return view('index');
+ })->middleware(['auth'])->name('index');
 
  Route::get('/', [App\Http\Controllers\DashboardController::class,'index'])->middleware(['auth']);
-
+ 
 
 Route::get('/display', function () {
     return view('display');
 })->name('display');
+
+Route::get('/welcome', function () {
+    return view('welcome');
+})->name('welcome');
 
 Route::get('/display', [App\Http\Controllers\DisplayController::class,'index']);
 
@@ -92,4 +98,10 @@ Route::get('settings', function () {
 
 Route::get('applicant', [ApplicantController::class,'itemView']);
 Route::post('/update-items', [ApplicantController::class, 'updateItems'])->name('update.items');
+
+Route::resource('/depts', DeptController::class);
+
+Route::resource('/emps', EmpController::class);
+
+
 require __DIR__.'/auth.php';

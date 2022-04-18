@@ -3,12 +3,14 @@
 
 @section('content')
 
+<div class="main_container" style=" width: (100% - 70px);
+margin-left: %; ">
+
      <div class="row">
 
-        <div class="col-md-2">
-        </div>
+        
 
-        <div class="col-md-9">
+        <div class="col-md-12">
             <br>
 
 
@@ -99,5 +101,6 @@
 
         </div>
      </div>
+</div>
     
 @endsection

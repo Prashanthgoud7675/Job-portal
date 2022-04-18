@@ -2,12 +2,16 @@
 
 
 @section('content')
+
+<div class="main_container" style=" width: (100% - 0px);
+margin-left: %; ">
 <br>
+
     <div class="container">
         <div class="row">
-            <div class="col-md-2">
+            <div >
             </div>
-            <div class="col-md-9">
+            <div class="col-md-12">
                 <div class="flex" >
                     <h1 style=" padding:1%; border-radius:50%"> <a href="{{ url('display') }}"> <i
                                 class="fa fa-angle-left" aria-hidden="true" style="font-size:30px;   "></i> </a> </h1>
@@ -100,4 +104,5 @@
     </div>
     </div>
     </div>
+</div>
 @endsection

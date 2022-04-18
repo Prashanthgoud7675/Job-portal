@@ -4,11 +4,12 @@
 @section('content')
 <br>
 
+<div class="main_container" style=" width: (100% - 70px);">
+
 
     <div class="row">
-        <div class="col-md-2" >
-        </div>
-        <div class="col-md-10">
+        
+        <div class="col-md-12">
 
             <div style="display: flex;">
                 <h1 style="font-size: 27px; font-weight:600">{{$count}}  Employees</h1> 
@@ -52,7 +53,7 @@
 
            <div style="display: flex;margin:5%">
                <h3> Department <br> {{$i->Team}}</h3>
-               <h3 style="margin-left: 25%; margin-bottom:3%">Date Hired <br> {{$i->Date}}</h3>
+               <h3 style="margin-left: 20%; margin-bottom:3%">Date Hired <br> {{$i->Date}}</h3>
            </div>
            
 
@@ -73,6 +74,7 @@
 
       
    </div>
+</div>
 
            
 @endsection
