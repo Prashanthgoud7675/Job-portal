@@ -9,24 +9,28 @@ margin-left: %; ">
 
     <div class="container">
         <div class="row">
-            <div >
-            </div>
+        
             <div class="col-md-12">
                 <div class="flex" >
                     <h1 style=" padding:1%; border-radius:50%"> <a href="{{ url('display') }}"> <i
                                 class="fa fa-angle-left" aria-hidden="true" style="font-size:30px;   "></i> </a> </h1>
                 </div>
+            </div>
+        </div>
 
                 <br>
 
+                <div class="row">
+                <div class="col-md-12" style="background-color: whitesmoke">
 
 
-                <div class="card">
-                    <div class="card-header">Jobs</div>
-                    <div class="card-body">
+
+                <div >
+                    <div >Jobs</div>
+                    <div>
 
 
-                        <a class="btn btn-success" href="{{ url('demo') }}"> Create new Job</a>
+                        <a class="btn btn-success" href="{{ route('jobs.create') }}"> Create new Job</a>
 
                         <br>
                         <br>

@@ -2,79 +2,68 @@
 
 
 @section('content')
-<br>
+    <br>
 
-<div class="main_container" style=" width: (100% - 70px);">
+    <div class="main_container" style=" width: (100% - 70px);">
 
+        <div class="row">
+            <div class="col-md-12" style="display: flex">
 
-    <div class="row">
-        
-        <div class="col-md-12">
+                <h1 style="font-size: 27px;font-weight:600;margin-right:1%"> <b> {{ $count }} </b> </h1>
+                <h1 style="font-size: 27px; font-weight:600"> Employees</h1>
 
-            <div style="display: flex;">
-                <h1 style="font-size: 27px; font-weight:600">{{$count}}  Employees</h1> 
+                <div class="container" style="text-align: right">
 
-                <div>
-
-               <a href=""> <i class="fa fa-bars" style="margin-top:5px; margin-left:900px; font-size:25px; "></i> </a>
+                    <a href="{{ url('empdata') }}"> <i class="fa fa-bars" style="margin-top:0%;font-size:25px;"></i> </a>
                 </div>
-           </div>
 
-           <br>
-
-
-   <div class="product" style="display: flex; flex-direction:row;">
-
-    
-      
-       @foreach ($data as $i)
-   
-           
-
-        <div class="card" style="width: 17rem; margin:10px; background-color:whitesmoke; border:none; ">
-
-            <div style="display: flex; margin-left:65%; margin-top:3%">
-                <h3 >{{$i->Status}} </h3> 
-
-              <a href=""> <i class="fa fa-ellipsis-h" style="font-size: 25px;  margin-left:10px"></i> </a>  
             </div>
+        </div>
+        <br>
 
-          <br>
-          
-              <img src="{{$i->Profile_url}}" alt="img1" style="height: 100px; width:100px; border-radius:50%; margin-left:32%; margin-bottom:5%">
-          
 
-           <b> <a href="{{route('employe.show' , $i->id)}}"> <h3 class="text-center"> {{$i->Employee_Name}} </h3> </a> </b>
-           <h3 class="text-muted text-center">{{$i->Position}}</h3>
+        <div class='container'>
+            <div class='row'>
+                @foreach ($data as $i)
+                    <div class='col-md-4 col-lg-4' >
 
-           <br>
+                        <div class="card"
+                            style="width: 25rem;height:350px; margin:10px; background-color:whitesmoke; border:none; ">
 
-           <div style="background-color: #E0F2F7; margin:3%">
+                            <br>
 
-           <div style="display: flex;margin:5%">
-               <h3> Department <br> {{$i->Team}}</h3>
-               <h3 style="margin-left: 20%; margin-bottom:3%">Date Hired <br> {{$i->Date}}</h3>
-           </div>
-           
+                            <img src="{{ $i->Profile_url }}" alt="img1"
+                                style="height: 100px; width:100px; border-radius:50%; margin-left:32%; margin-bottom:5%">
 
-           <hr>
-           
-           
 
-           <h3 style="margin-top: 5%; margin-left:7%; margin-bottom:5%"><i class="	fa fa-envelope">  </i> {{ $i->Email }} <br> <i class="fa fa-phone"> </i> {{$i->Mobile_Num}} </h3>
+                            <b> <a href="{{ route('employe.show', $i->id) }}">
+                                    <h3 class="text-center"> {{ $i->Employee_Name }} </h3>
+                                </a> </b>
+                            <h3 class="text-muted text-center" style="font-size:17px">{{ $i->Position }}</h3>
 
-           </div>
-           
-              
+                            <br>
+
+                            <div style="background-color: #E0F2F7; margin:3%">
+
+                                <div style="display: flex;margin:5%">
+                                    <h3 style="font-size:15px"> Department <br> {{ $i->Team }}</h3>
+                                    <h3 style="margin-left: 20%; margin-bottom:3%;font-size:15px">Date Hired <br>
+                                        {{ $i->Date }}</h3>
+                                </div>
+
+                                <hr>
+
+                                <h3 style="margin-top: 5%; margin-left:7%; margin-bottom:5%;font-size:17px"><i
+                                        class="	fa fa-envelope"> </i> {{ $i->Email }} <br> <i class="fa fa-phone"> </i>
+                                    {{ $i->Mobile_Num }} </h3>
+
+                            </div>
+                        </div>
+
+                    </div>
+                @endforeach
             </div>
-       @endforeach
-       
-      </div>
+        </div>
+
     </div>
-
-      
-   </div>
-</div>
-
-           
 @endsection

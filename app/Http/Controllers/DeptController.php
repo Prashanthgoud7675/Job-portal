@@ -30,7 +30,7 @@ class DeptController extends Controller
      */
     public function create()
     {
-        //
+        return view('depts.create');
     }
 
     /**
@@ -49,7 +49,7 @@ class DeptController extends Controller
             'Remarks' => 'required'
         ]);
 
-        $dept->update($request->all());
+        $dept->create($request->all());
 
         return redirect()->route('depts.index')
             ->with('success', ' updated successfully');

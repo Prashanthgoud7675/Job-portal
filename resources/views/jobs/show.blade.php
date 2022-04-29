@@ -3,8 +3,7 @@
 
 @section('content')
 
-<div class="main_container" style=" width: (100% - 70px);
-margin-left: %; ">
+<div class="main_container" >
 
      <div class="row">
 
@@ -27,31 +26,19 @@ margin-left: %; ">
                
 
                 <div class="card-header">
-                    <h1 style="color: rgb(112, 112, 112); margin-bottom:1%;">Job Title</h1>
+                    <h1 style="color: rgb(112, 112, 112); margin-bottom:1%;font-size:17px">Job Title</h1>
                     
-                    <h1>{{ $job->JobRole }}</h1>
+                    <h1 style="font-size:17px">{{ $job->JobRole }}</h1>
 
                 </div>
 
                 <div class="card-body">
 
-                <h1 style="color: rgb(112, 112, 112); margin-bottom:1%;">Job Description</h1>
+                <h1 style="color: rgb(112, 112, 112); margin-bottom:1%;font-size:17px">Job Description</h1>
 
-  
                   
-                    <h1>{{ $job->Description }}</h1>
-
-            
-
-         
-                  
-                    
-            
-                </div>  
-
-               
-            
-                    
+                    <h1 style="font-size:17px">{{ $job->Description }}</h1>
+                </div>       
             </div>
 
             <br>
@@ -60,7 +47,7 @@ margin-left: %; ">
                
 
                 <div class="card-header">
-                    <h1 style="color: rgb(112, 112, 112); margin-bottom:1%;">Job Details</h1>
+                    <h1 style="color: rgb(112, 112, 112); margin-bottom:1%;font-size:17px">Job Details</h1>
                     
                     
 
@@ -71,17 +58,17 @@ margin-left: %; ">
                 
 
   
-                    <h1 style="margin-bottom: 1%; color:rgb(80, 118, 241)">Department </h1> <h1><span>  {{ $job->DeptName }}  </span> </h1> <br>
+                    <h1 style="margin-bottom: 1%; color:rgb(80, 118, 241);font-size:17px">Department </h1> <h1><span>  {{ $job->DeptName }}  </span> </h1> <br>
                    
-                    <h1 style="margin-bottom: 1%; color:rgb(80, 118, 241)"> Annual Salary  </h1> <h1>  <span> {{$job->AnnualSalary}} </span> </h1> <br>
+                    <h1 style="margin-bottom: 1%; color:rgb(80, 118, 241);font-size:17px"> Annual Salary  </h1> <h1>  <span> {{$job->AnnualSalary}} </span> </h1> <br>
                     
-                    <h1 style="margin-bottom: 1%; color:rgb(80, 118, 241)"> Created By  </h1> <h1> <span> {{ $job->CreatedBy }} </span> </h1>
+                    <h1 style="margin-bottom: 1%; color:rgb(80, 118, 241);font-size:17px"> Created By  </h1> <h1> <span> {{ $job->CreatedBy }} </span> </h1>
                     <br>
-                    <h1 style="margin-bottom: 1%; color:rgb(80, 118, 241)"> Creation Date  </h1> <h1> <span> {{ $job->CreatedDate }} </span> </h1>
+                    <h1 style="margin-bottom: 1%; color:rgb(80, 118, 241);font-size:17px"> Creation Date  </h1> <h1> <span> {{ $job->CreatedDate }} </span> </h1>
                     <br>
-                    <h1 style="margin-bottom: 1%; color:rgb(80, 118, 241)"> Close Date  </h1> <h1> <span> {{ $job->CloseDate }} </span> </h1>
+                    <h1 style="margin-bottom: 1%; color:rgb(80, 118, 241);font-size:17px"> Close Date  </h1> <h1> <span> {{ $job->CloseDate }} </span> </h1>
                     <br>
-                    <h1 style="margin-bottom: 1%; color:rgb(80, 118, 241)"> Apply Link  </h1> <h1> <span> <a href="{{route('apply')}}"> {{ $job->ApplyLink }} </a> </span> </h1>
+                    <h1 style="margin-bottom: 1%; color:rgb(80, 118, 241);font-size:17px"> Apply Link  </h1> <h1> <span> <a href="{{route('apply')}}"> {{ $job->ApplyLink }} </a> </span> </h1>
             
 
          

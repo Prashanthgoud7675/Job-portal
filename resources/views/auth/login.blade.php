@@ -1,56 +1,112 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+<!DOCTYPE html>
+<html lang="en">
 
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
+    </script>
 
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
+    <script src="https://cdn.tailwindcss.com"></script>
 
-            <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
+    <title>XSILICA HRMS</title>
 
-                <x-input id="email" class="block mt-1 w-full h-10" style="background-color:rgb(243, 235, 235);" type="email" name="email" :value="old('email')" required autofocus />
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
+
+</head>
+
+<body style="background-color: whitesmoke">
+
+
+    <div class="row">
+        <div class="col-md-3"></div>
+
+        <div class="col-md-6" style="margin-top: 9%">
+            <div class="bg-white" style="padding-top:4%;padding-bottom:4%;border-radius:25px">
+                <div class="flex justify-center">
+                    <img src="https://imagizer.imageshack.com/img923/5138/bRZo8P.png" alt="logo" height="170px"
+                        width="150px">
+                        
+                </div>
+                <br>
+                <div class="flex justify-center" style="margin-top: 0%">
+                    <div class="w-6/12    rounded-lg">
+
+
+                        @if (session('status'))
+                            <div class="bg-red-500 p-4 rounded-lg mb-6 text-white text-center">
+                                {{ session('status') }}
+                            </div>
+                        @endif
+
+
+
+
+                        <form action="{{ route('login') }}" method="post">
+                            @csrf
+
+
+                            <div class="mb-4">
+                                <label for="email" class="sr-only">Email</label>
+                                <input type="text" name="email" id="email" placeholder="Email"
+                                    class="bg-gray-100 border-2 w-full p-2 rounded-lg @error('email') border-red-500 @enderror"
+                                    value="{{ old('email') }}">
+
+                                @error('email')
+                                    <div class="text-red-500 mt-2 text-sm">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="password" class="sr-only">Password</label>
+                                <input type="password" name="password" id="password" placeholder="Enter password"
+                                    class="bg-gray-100 border-2 w-full p-2 rounded-lg @error('password') border-red-500 @enderror"
+                                    value="">
+
+                                @error('password')
+                                    <div class="text-red-500 mt-2 text-sm">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+
+
+
+
+                            <div>
+                                <button type="submit"
+                                    class="bg-blue-500 text-white px-4 py-3 rounded font-medium w-full">Login</button>
+                            </div>
+
+                            <br>
+
+
+
+                            <a href="register" style="color:dodgerblue">create an account now!</a>
+
+
+                        </form>
+
+                    </div>
+                </div>
             </div>
+        </div>
+    </div>
 
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
+</body>
 
-                <x-input id="password" class="block mt-1 w-full h-10" style="background-color:rgb(243, 235, 235);"
-                                type="password"
-                                name="password"
-                                required autocomplete="current-password" />
-            </div>
-
-            <!-- Remember Me -->
-            <div class="block mt-4">
-                <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('register'))
-                    <a class="underline text-sm text-gray-500 hover:text-gray-900" href="{{ route('register') }}" style="font-size: 16px">
-                        {{ __('create an account!') }}
-                    </a>
-                @endif
-
-                <x-button class="ml-3">
-                    {{ __('Log in') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+</html>

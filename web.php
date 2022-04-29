@@ -7,18 +7,12 @@ use App\Http\Controllers\FullCalenderController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\EmployeController;
 use App\Http\Controllers\DeptController;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EmpController;
 use App\Http\Controllers\ApplicantController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\DisplayController;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 use App\Http\Controllers\SearchController;
-use App\Http\Controllers\AddController;
-
-use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Auth\LogoutController;
 
 
 /*
@@ -35,8 +29,7 @@ use App\Http\Controllers\Auth\LogoutController;
 
 
 
-
-Route::resource('/', DashboardController::class)->middleware(['auth']);
+ Route::get('/', [App\Http\Controllers\DashboardController::class,'index'])->middleware(['auth']);
  
 
 Route::get('/display', function () {
@@ -46,6 +39,7 @@ Route::get('/display', function () {
 
 
 Route::get('/display', [App\Http\Controllers\DisplayController::class,'index']);
+
 
 Route::get('calender', [FullCalenderController::class, 'index']);
 
@@ -103,18 +97,5 @@ Route::resource('/depts', DeptController::class);
 
 Route::resource('/emps', EmpController::class);
 
-
-
-Route::post('/logout', [LogoutController::class, 'store']) ->name('logout');
-
-
-Route::get('/login', [LoginController::class, 'index']) ->name('login');
-Route::post('/login', [LoginController::class, 'store']);
-
-
-Route::get('/register', [RegisterController::class, 'index']) ->name('register');
-Route::post('/register', [RegisterController::class, 'store']);
-
-Route::resource('/project', AddController::class);
 
 require __DIR__.'/auth.php';

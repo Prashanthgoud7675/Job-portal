@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Add;
 use Illuminate\Http\Request;
-use App\Models\Event;
-use App\Models\Dept;
-use App\Models\Emp;
 
-class DashboardController extends Controller
+
+
+class AddController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,13 +16,16 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $data = Event::all();
-        $dept = Dept::all();
-        $emp = Emp::all();
+        $data = Add::all();
 
-        $count = Emp::count();
-        
-        return view('dashboard', ['data' => $data, 'dept'=>$dept, 'emp' => $emp, 'count' => $count]);
+        return view('project.create',['data' => $data, ]);
+
+
+
+        $projects = Add::latest()->paginate(5);
+
+        return view('project.create', compact('projects'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -32,7 +35,7 @@ class DashboardController extends Controller
      */
     public function create()
     {
-        //
+        return view('project.create');
     }
 
     /**
@@ -43,16 +46,28 @@ class DashboardController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+
+            
+            'project_id' => 'required',
+            'project_name' => 'required',
+            
+            
+        ]);
+
+        Add::create($request->all());
+
+        return redirect()->route('calender')
+            ->with('success', ' created successfully.');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Add  $add
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Add $add)
     {
         //
     }
@@ -60,10 +75,10 @@ class DashboardController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Add  $add
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Add $add)
     {
         //
     }
@@ -72,10 +87,10 @@ class DashboardController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Add  $add
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Add $add)
     {
         //
     }
@@ -83,10 +98,10 @@ class DashboardController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Add  $add
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Add $add)
     {
         //
     }

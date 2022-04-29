@@ -2,6 +2,8 @@
 
 
 @section('content')
+<div class="main_container" style=" width: (100% - 70px);
+margin-left: %; ">
     <div class="container">
         <div class="row" style="margin-top:45px">
             <div class="col-md-6 offset-md-3">
@@ -147,4 +149,5 @@
         </div>
 
     </div>
+</div>
 @endsection

@@ -13,7 +13,7 @@ class Emp extends Model
 
     protected $fillable=[
 
-        'Employe_Name', 'Position', 'Email', 'Mobile_Num', 'Team','Date', 'Status','Profile_url'
+        'Employee_Name', 'Position', 'Email', 'Mobile_Num', 'Team','Date', 'Status','Profile_url'
 
     ];
 

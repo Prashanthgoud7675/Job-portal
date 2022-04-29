@@ -33,7 +33,7 @@ class EmpController extends Controller
      */
     public function create()
     {
-        //
+        return view('emps.create');
     }
 
     /**
@@ -55,13 +55,14 @@ class EmpController extends Controller
             'Date' => 'required',
             'Status' => 'required',
             'Profile_url' => 'required',
+            'Remarks' => 'required',
             
         ]);
 
-        $emp->update($request->all());
+        $emp->create($request->all());
 
         return redirect()->route('emps.index')
-            ->with('success', ' updated successfully');
+            ->with('success', ' created successfully');
     
     }
 
@@ -108,6 +109,7 @@ class EmpController extends Controller
             'Date' => 'required',
             'Status' => 'required',
             'Profile_url' => 'required',
+            'Remarks' => 'required',
             
         ]);
 

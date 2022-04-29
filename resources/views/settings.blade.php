@@ -2,28 +2,38 @@
 
 
 @section('content')
-<div class="main_container" style=" width: (100% - 70px);
-margin-left: %; ">
+    <div class="main_container">
+        <br>
 
-<div class="row">
-    <div class="col-md-4">
+        <div class="row">
+            
+            <div class="col-md-4 " style="background-color: whitesmoke;margin-left:2%;padding:2%">
+                
+                    <a href="jobs" style="text-decoration:none; color:black;"> <b> <h1 style="margin-top: 2%;color:#047b6f;font-size:17px">  Update Jobs </h1> </b>  </a>
+                
+        
+               
+            </div>
+        </div>
+        <br>
+        
+        <div class="row">
+            <div class="col-md-4" style="background-color: whitesmoke;margin-left:2%;padding:2%">
+            <a href="emps" style="text-decoration:none; color:black;"> <b> <h1 style="margin-top: 2%;color:#09897d;font-size:17px"> Update Employees </h1> </b>  </a> 
+                
+            </div>
+        </div>
+        <br>
+        
+        <div class="row">
+            <div class="col-md-4 col-lg-4" style="background-color: whitesmoke;margin-left:2%;padding:2%">
+                <a href="depts" style="text-decoration:none; color:black;"> <b> <h1 style="margin-top: 2%;color:#09897d;font-size:17px"> Update Departments </h1> </b>  </a>
+                
+            </div>
+        </div>
+        
+        
+
+
     </div>
-
-    <div class="col-md-8">
-        <br><br>
-        <div class="card" style="width:15rem">
-        <a href="jobs"> Jobs</a>
-</div>
-<br>
-<div class="card"style="width:15rem">
-<a href="depts">Departments</a>
-</div>
-<br>
-<div class="card" style="width:15rem">
-<a href="emps">Employes</a>
-</div>
-<br>
-</div>
-</div>
-
 @endsection

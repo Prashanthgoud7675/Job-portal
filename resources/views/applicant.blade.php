@@ -29,14 +29,13 @@
     </head>
 
     <body>
-        <div class="main_container" style=" width: (100% - 70px);
-    margin-left: %; ">
+        <div class="main_container">
             <br>
 
 
             <div class="top">
                 <div class="container"
-                    style="  width: 0px; height: 5vh; display: flex; margin-left:0%;margin-right:15%;margin-top:2%">
+                    style="  width: 0px; height: 5vh; display: flex; margin-left:5%;margin-right:15%;margin-top:2%">
                     <div class="status" id="no_status">
                         <div style="width: 13rem;">
 
@@ -72,8 +71,8 @@
             </div>
 
         
-        <div class="container"
-            style="  width: 0px; height: 1vh; display: flex; margin-left:0%;margin-right:15%;margin-top:3%">
+         <div class="container"
+            style="  width: 0px; height: 1vh; display: flex; margin-left:5%;margin-right:15%;margin-top:3%">
             <div class="status" id="no_status">
 
                 <div style="width: 13rem;">
@@ -91,27 +90,29 @@
 
 
 
-        <div style="  width: 1000px; height: 90vh; display: flex; margin-left:0%;margin-top:5%">
-            <div class="status" id="no_status">
-                <div class="card" style="width: 14rem; border-top: 8px solid #0080ff">
+        <div style="  width: 1300px; height: 90vh; display: flex; margin-left:5%;margin-top:10%">
+            <div class="status" id="no_status" >
+                <div class="card" style="width: 22rem; border-top: 8px solid #0080ff">
 
                     <div style="display: flex">
-                        <h5 style="margin-left:5%"> New Applied</h5>
+                        <h5 style="margin-left:5%;font-size:17px"> New Applied</h5>
+                        <br>
 
                     </div>
                 </div>
-                <div>
+                
+                <div >
 
-                    <ul class="list-group connectedSortable" id="padding-item-drop">
+                    <ul class="list-group connectedSortable" id="padding-item-drop" style="width: 22rem">
                         @if (!empty($panddingItem) && $panddingItem->count())
                             @foreach ($panddingItem as $key => $value)
                                 <li class="list-group-item " item-id="{{ $value->id }}">
                                     <div>
                                         <div style="display:flex">
                                             <img src="{{ $value->Profile_url }}"
-                                                style="margin-top: %;margin-left:%; border-radius:50%;height:50px; width:50px">
+                                                style=" border-radius:50%;height:50px; width:50px">
 
-                                            <p style="margin-left:10%;margin-bottom:%:;font-size:16px">
+                                            <p style="margin-right:-30%; margin-left:12%;margin-bottom:%;font-size:16px">
                                                 {{ $value->First_Name }} {{ $value->Last_Name }}</p>
                                         </div>
 
@@ -119,7 +120,7 @@
 
 
                                             <div class="overlay"
-                                                style="position: relative; margin-left:-5%; color:#F4D03F;font-size:13px">
+                                                style="position: relative; margin-left:-2%; color:#F4D03F;font-size:13px">
 
                                                 @while ($value->Rating > 0)
                                                     @if ($value->Rating > 0.5)
@@ -131,7 +132,7 @@
                                                 @endwhile
 
                                             </div>
-                                            <h4 style="margin-left:12%;margin-top:2%;font-size:13px">5 years Exp</h4>
+                                            <h4 style="margin-left:5%;margin-top:2%;font-size:17px">5 years Exp</h4>
                                         </div>
                                     </div>
                                 </li>
@@ -142,26 +143,26 @@
 
                 </div>
             </div>
-            <div class="status" style="margin-left:3%">
-                <div class="card" style="width: 14rem;border-top: 8px solid #008B8B">
+            <div class="status" style="margin-left:4%">
+                <div class="card" style="width: 22rem;border-top: 8px solid #008B8B">
 
                     <div style="display: flex">
-                        <h5 style="margin-left:5%"> Screening</h5>
+                        <h5 style="margin-left:5%;font-size:17px"> Screening</h5>
 
                     </div>
                 </div>
-                <div>
+                <div >
 
-                    <ul class="list-group  connectedSortable" id="complete-item-drop">
+                    <ul class="list-group  connectedSortable" id="complete-item-drop" style="width: 22rem">
                         @if (!empty($completeItem) && $completeItem->count())
                             @foreach ($completeItem as $key => $value)
                                 <li class="list-group-item " item-id="{{ $value->id }}">
-                                    <div>
+                                    <div >
                                         <div style="display:flex">
                                             <img src="{{ $value->Profile_url }}"
                                                 style=" border-radius:50%;height:50px; width:50px">
 
-                                            <p style="margin-left:10%;margin-bottom:%:;font-size:16px">
+                                            <p style="margin-left:12%;margin-right:-30%;margin-bottom:%;font-size:17px">
                                                 {{ $value->First_Name }} {{ $value->Last_Name }}</p>
                                         </div>
 
@@ -169,7 +170,7 @@
 
 
                                             <div class="overlay"
-                                                style="position: relative; margin-left:-5%; color:#F4D03F;font-size:13px">
+                                                style="position: relative; margin-left:-2%; color:#F4D03F;font-size:13px">
 
                                                 @while ($value->Rating > 0)
                                                     @if ($value->Rating > 0.5)
@@ -181,7 +182,7 @@
                                                 @endwhile
 
                                             </div>
-                                            <h4 style="margin-left:12%;margin-top:2%;font-size:13px">5 years Exp</h4>
+                                            <h4 style="margin-left:5%;margin-top:2%;font-size:17px">5 years Exp</h4>
                                         </div>
                                     </div>
                                 </li>
@@ -193,18 +194,18 @@
                 </div>
             </div>
 
-            <div class="status" style="margin-left:3%">
-                <div class="card" style="width: 14rem;border-top: 8px solid #b34d4d">
+            <div class="status" style="margin-left:4%">
+                <div class="card" style="width: 22rem;border-top: 8px solid #b34d4d">
 
                     <div style="display: flex">
-                        <h5 style="margin-left:5%"> Interview </h5>
+                        <h5 style="margin-left:5%;font-size:17px"> Interview </h5>
 
                     </div>
                 </div>
 
                 <div>
 
-                    <ul class="list-group  connectedSortable" id="good-item-drop">
+                    <ul class="list-group  connectedSortable" id="good-item-drop" style="width: 22rem">
                         @if (!empty($goodItem) && $goodItem->count())
                             @foreach ($goodItem as $key => $value)
                                 <li class="list-group-item " item-id="{{ $value->id }}">
@@ -213,7 +214,7 @@
                                             <img src="{{ $value->Profile_url }}"
                                                 style="margin-top: %;margin-left:%; border-radius:50%;height:50px; width:50px">
 
-                                            <p style="margin-left:10%;margin-bottom:-35%:;font-size:16px">
+                                            <p style="margin-left:12%;margin-right:-35%;font-size:17px">
                                                 {{ $value->First_Name }} {{ $value->Last_Name }}</p>
                                         </div>
 
@@ -221,7 +222,7 @@
 
 
                                             <div class="overlay"
-                                                style="position: relative; margin-left:-5%; color:#F4D03F;font-size:13px">
+                                                style="position: relative; margin-left:-2%; color:#F4D03F;font-size:13px">
 
                                                 @while ($value->Rating > 0)
                                                     @if ($value->Rating > 0.5)
@@ -233,7 +234,7 @@
                                                 @endwhile
 
                                             </div>
-                                            <h4 style="margin-left:12%;margin-top:2%;font-size:13px">5 years Exp</h4>
+                                            <h4 style="margin-left:5%;margin-top:2%;font-size:17px">5 years Exp</h4>
                                         </div>
                                     </div>
                                 </li>
@@ -247,18 +248,18 @@
 
 
 
-            <div class="status" style="margin-left:3%">
-                <div class="card" style="width: 14rem;border-top: 8px solid #00ffff">
+            <div class="status" style="margin-left:4%">
+                <div class="card" style="width: 22rem;border-top: 8px solid #00ffff">
 
                     <div style="display: flex">
-                        <h5 style="margin-left:5%"> Hired </h5>
+                        <h5 style="margin-left:5%;font-size:17px"> Hired </h5>
 
                     </div>
                 </div>
+            
+                <div  style="width: 15rem" >
 
-                <div>
-
-                    <ul class="list-group  connectedSortable" id="candidate-item-drop">
+                    <ul class="list-group  connectedSortable" id="candidate-item-drop" style="width: 22rem">
                         @if (!empty($candidate) && $candidate->count())
                             @foreach ($candidate as $key => $value)
                                 <li class="list-group-item " item-id="{{ $value->id }}">
@@ -267,7 +268,7 @@
                                             <img src="{{ $value->Profile_url }}"
                                                 style="margin-top: %;margin-left:%; border-radius:50%;height:50px; width:50px">
 
-                                            <p style="margin-left:10%;margin-bottom:-35%:;font-size:16px">
+                                            <p style="margin-left:12%;margin-right:-30%;font-size:17px">
                                                 {{ $value->First_Name }} {{ $value->Last_Name }}</p>
                                         </div>
 
@@ -276,7 +277,7 @@
 
 
                                             <div class="overlay"
-                                                style="position: relative; margin-left:-5%; color:#F4D03F;font-size:13px">
+                                                style="position: relative; margin-left:-2%; color:#F4D03F;font-size:13px">
 
                                                 @while ($value->Rating > 0)
                                                     @if ($value->Rating > 0.5)
@@ -288,7 +289,7 @@
                                                 @endwhile
 
                                             </div>
-                                            <h4 style="margin-left:12%;margin-top:2%;font-size:13px">5 years Exp</h4>
+                                            <h4 style="margin-left:5%;margin-top:2%;font-size:17px">5 years Exp</h4>
                                         </div>
                                     </div>
                                 </li>

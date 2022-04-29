@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Helpers\Helper;
+use App\helpers\helper;
 use App\Models\Student;
 use Validator;
 
@@ -11,7 +11,7 @@ class StudentController extends Controller
 {
     function index(){
         $data = ['students'=>Student::all()];
-        return view('demo',$data);
+        return view('jobs.create',$data);
     }
     function save(Request $request){
         /** Validate name field */
@@ -48,7 +48,7 @@ class StudentController extends Controller
         $CloseDate = $request->CloseDate;
         
         
-        $job_id = Helper::IDGenerator(new Student, 'job_id', 2, 'DV22'); /** Generate id */
+        $job_id = helper::IDGenerator(new Student, 'job_id', 2, 'DV22'); /** Generate id */
         $q = new Student;
         $q->job_id = $job_id;
         $q->JobTitle = $JobTitle;

@@ -4,12 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Event;
+use App\Models\Job;
+use App\Models\Add;
 
 class FullCalenderController extends Controller
 {
     public function index(Request $request)
     {
 		$data = Event::all();
+		$add = Add::all();
+	
     	if($request->ajax())
     	{
     		$data = Event::whereDate('start', '>=', $request->start)
@@ -19,7 +23,7 @@ class FullCalenderController extends Controller
                        ->get(['id', 'title', 'start', 'end']);
             return response()->json($data);
     	}
-    	return view('calender',['data' => $data]);
+    	return view('calender',['add' => $add,'data' => $data]);
     }
 
     public function action(Request $request)

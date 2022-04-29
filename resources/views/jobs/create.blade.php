@@ -30,7 +30,7 @@ margin-left: %; ">
 
 <div class="flex justify-center">
    
-<form action="{{ route('jobs.store') }}" method="POST">
+<form action="{{ route('save') }}" method="POST">
     @csrf
      <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">

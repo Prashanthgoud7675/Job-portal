@@ -10,7 +10,7 @@ margin-left: %; ">
           
             <div class="col-md-12">
                 <div class="flex" >
-                    <h1 style=" padding:1%; border-radius:50%"> <a href="{{ url('display') }}"> <i
+                    <h1 style=" padding:1%; border-radius:50%"> <a href="{{ url('settings') }}"> <i
                                 class="fa fa-angle-left" aria-hidden="true" style="font-size:30px;   "></i> </a> </h1>
                 </div>
 
@@ -23,7 +23,7 @@ margin-left: %; ">
                     <div class="card-body">
 
 
-                       
+                        <a class="btn btn-success" href="{{ route('emps.create') }}"> Create new Employee</a>
 
                         <br>
                         <br>
