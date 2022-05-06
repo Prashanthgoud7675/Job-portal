@@ -31,12 +31,12 @@
         </style>
     </head>
 
-    <body>
+    <body style="background-image: linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%);">
         <div class="main_container">
             <br>
 
 
-            <div class="top">
+            <div class="top" style="margin-top: 8%">
                 <div class="container"
                     style="  width: 0px; height: 5vh; display: flex; margin-left:5%;margin-right:15%;margin-top:2%">
                     <div class="status" id="no_status">
@@ -103,12 +103,12 @@
                     </div>
                 </div>
                 
-                <div style="margin-top:5px"" >
+                <div style="margin-top:5px;" >
 
-                    <ul class="list-group connectedSortable" id="padding-item-drop" style="width: 22rem">
+                    <ul class="list-group connectedSortable" id="padding-item-drop" style="width: 22rem;">
                         @if (!empty($panddingItem) && $panddingItem->count())
                             @foreach ($panddingItem as $key => $value)
-                                <li class="list-group-item " item-id="{{ $value->id }}">
+                                <li class="list-group-item " item-id="{{ $value->id }}" style="background-image: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #efefef 48%, #d9d9d9 75%, #bcbcbc 100%);">
                                     <div>
                                         <div style="display:flex">
                                             <img src="{{ $value->Profile_url }}"
@@ -158,7 +158,7 @@
                     <ul class="list-group  connectedSortable" id="complete-item-drop" style="width: 22rem">
                         @if (!empty($completeItem) && $completeItem->count())
                             @foreach ($completeItem as $key => $value)
-                                <li class="list-group-item " item-id="{{ $value->id }}">
+                                <li class="list-group-item " item-id="{{ $value->id }}" style="background-image: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #efefef 48%, #d9d9d9 75%, #bcbcbc 100%);">
                                     <div >
                                         <div style="display:flex">
                                             <img src="{{ $value->Profile_url }}"
@@ -205,12 +205,12 @@
                     </div>
                 </div>
 
-                <div style="width: 15rem;margin-top:5px"">
+                <div class="card" style="width: 15rem;margin-top:5px"">
 
                     <ul class="list-group  connectedSortable" id="good-item-drop" style="width: 22rem">
                         @if (!empty($goodItem) && $goodItem->count())
                             @foreach ($goodItem as $key => $value)
-                                <li class="list-group-item " item-id="{{ $value->id }}">
+                                <li class="list-group-item " item-id="{{ $value->id }}" style="background-image: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #efefef 48%, #d9d9d9 75%, #bcbcbc 100%);">
                                     <div>
                                         <div style="display:flex">
                                             <img src="{{ $value->Profile_url }}"
@@ -265,7 +265,7 @@
                     <ul class="list-group  connectedSortable" id="candidate-item-drop" style="width: 22rem">
                         @if (!empty($candidate) && $candidate->count())
                             @foreach ($candidate as $key => $value)
-                                <li class="list-group-item " item-id="{{ $value->id }}">
+                                <li class="list-group-item " item-id="{{ $value->id }}" style="background-image: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #efefef 48%, #d9d9d9 75%, #bcbcbc 100%);">
                                     <div>
                                         <div style="display:flex">
                                             <img src="{{ $value->Profile_url }}"

@@ -74,9 +74,6 @@
             pointer-events: none;
         }
 
-        body {
-            
-        }
 
         .sidebar {
             position: fixed;
@@ -372,17 +369,14 @@
                 height: 30px;
                 width: 150px;
             }
-
-
-
            
         }
 
 
         .main_container {
             width: (100% - 700px);
-            margin-top: 80px;
-            margin-left: 190px;
+            margin-top: 0px;
+            margin-left: 200px;
             padding: 15px;
             transition: all 0.3s ease;
         }
@@ -561,6 +555,7 @@
         </ul>
 
     </div>
+    
 
     
 

@@ -19,16 +19,16 @@
             <br>
 
             <div class="row">
-                <div class="col-md-11" style="background-color: whitesmoke;width:1000px">
+                <div class="col-md-11" style="width:1000px; background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);">
 
 
 
-                    <div>
-                        <div>Jobs</div>
+                    <div style="">
+                        
                         <div>
 
 
-                            <a class="btn btn-success" href="{{ route('jobs.create') }}"> Create new Job</a>
+                            <a class="btn btn-success" href="{{ route('jobs.create') }}" style="margin-top: 3%"> Create new Job</a>
 
                             <br>
                             <br>
@@ -39,7 +39,7 @@
                                 </div>
                             @endif
 
-                            <div class="table-responsive">
+                            <div class="table-responsive" >
 
                                 <table class="table table-bordered">
                                     <tr>

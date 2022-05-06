@@ -8,9 +8,7 @@ margin-left: %; ">
 <div class="row">
     
     <div class="col-md-12 ">
-        <div >
-            <h2>Create New Job</h2>
-        </div>
+       
         <div >
             <a class="btn btn-primary" href="{{ route('jobs.index') }}"> Back</a>
         </div>
@@ -37,78 +35,78 @@ margin-left: %; ">
             
         
         
-            <div class="mt-4">
-                <x-label for="JobTitle" :value="__('JobTitle')" />
+            <div class="mt-4" style="margin-bottom: 4%">
+                <x-label for="JobTitle" :value="__('JobTitle')" style="font-size: 17px"/>
         
                 <x-input id="JobTitle" class="block mt-1 w-full h-10" style="background-color:rgb(243, 235, 235);width:500px" type="string" name="JobTitle" :value="old('JobTitle')" required />
             </div>
 
-            <div class="mt-4">
-                <x-label for="JobRole" :value="__('JobRole')" />
+            <div class="mt-4" style="margin-bottom: 4%">
+                <x-label for="JobRole" :value="__('JobRole')" style="font-size: 17px"/>
         
                 <x-input id="JobRole" class="block mt-1 w-full h-10" style="background-color:rgb(243, 235, 235);width:500px" type="string" name="JobRole" :value="old('JobRole')" required />
             </div>
 
-            <div>
-                <x-label for="Description" :value="__('Description')" />
+            <div style="margin-bottom: 4%">
+                <x-label for="Description" :value="__('Description')" style="font-size: 17px"/>
         
                 <x-input id="Description" class="block mt-1 w-full h-10" style="background-color:rgb(243, 235, 235);width:500px" type="text" name="Description" :value="old('Description')" required autofocus />
             </div>
         
         
-            <div class="mt-4">
-                <x-label for="Positions" :value="__('Positions')" />
+            <div class="mt-4" style="margin-bottom: 4%">
+                <x-label for="Positions" :value="__('Positions')" style="font-size: 17px"/>
         
                 <x-input id="Positions" class="block mt-1 w-full h-10" style="background-color:rgb(243, 235, 235);width:500px" type="unsignedBigInteger" name="Positions" :value="old('Positions')" required />
             </div>
-            <div>
-                <x-label for="Location" :value="__('Location')" />
+            <div style="margin-bottom: 4%">
+                <x-label for="Location" :value="__('Location')" style="font-size: 17px"/>
         
                 <x-input id="Location" class="block mt-1 w-full h-10" style="background-color:rgb(243, 235, 235);width:500px" type="text" name="Location" :value="old('Location')" required autofocus />
             </div>
         
         
-            <div class="mt-4">
-                <x-label for="AnnualSalary" :value="__('AnnualSalary')" />
+            <div class="mt-4" style="margin-bottom: 4%">
+                <x-label for="AnnualSalary" :value="__('AnnualSalary')" style="font-size: 17px"/>
         
                 <x-input id="AnnualSalary" class="block mt-1 w-full h-10" style="background-color:rgb(243, 235, 235);width:500px" type="unsignedBigInteger" name="AnnualSalary" :value="old('AnnualSalary')" required />
             </div>
-            <div>
-                <x-label for="deptshortname" :value="__('deptshortname')" />
+            <div style="margin-bottom: 4%">
+                <x-label for="deptshortname" :value="__('deptshortname')" style="font-size: 17px"/>
         
                 <x-input id="deptshortname" class="block mt-1 w-full h-10" style="background-color:rgb(243, 235, 235);width:500px" type="string" name="deptshortname" :value="old('deptshortname')" required autofocus />
             </div>
         
         
          
-            <div>
-                <x-label for="Active" :value="__('Active')" />
+            <div style="margin-bottom: 4%">
+                <x-label for="Active" :value="__('Active')" style="font-size: 17px"/>
         
                 <x-input id="Active" class="block mt-1 w-full h-10" style="background-color:rgb(243, 235, 235);width:500px" type="unsignedBigInteger" name="Active" :value="old('Active')" required autofocus />
             </div>
         
         
-            <div class="mt-4">
-                <x-label for="CreatedDate" :value="__('CreatedDate')" />
+            <div class="mt-4" style="margin-bottom: 4%">
+                <x-label for="CreatedDate" :value="__('CreatedDate')" style="font-size: 17px"/>
         
                 <x-input id="CreatedDate" class="block mt-1 w-full h-10" style="background-color:rgb(243, 235, 235);width:500px" type="date" name="CreatedDate" :value="old('CreatedDate')" required />
             </div>
-            <div>
-                <x-label for="CreatedBy" :value="__('CreatedBy')" />
+            <div style="margin-bottom: 4%">
+                <x-label for="CreatedBy" :value="__('CreatedBy')" style="font-size: 17px"/>
         
                 <x-input id="CreatedBy" class="block mt-1 w-full h-10" style="background-color:rgb(243, 235, 235);width:500px" type="string" name="CreatedBy" :value="old('CreatedBy')" required autofocus />
             </div>
         
-            <div>
-                <x-label for="Apply_Link" :value="__('ApplyLink')" />
+            <div style="margin-bottom: 4%">
+                <x-label for="Apply_Link" :value="__('ApplyLink')" style="font-size: 17px"/>
         
                 <x-input id="ApplyLink" class="block mt-1 w-full h-10" style="background-color:rgb(243, 235, 235);width:500px" type="string" name="ApplyLink" :value="old('ApplyLink')" required autofocus />
             </div>
             
         
         
-            <div class="mt-4">
-                <x-label for="CloseDate" :value="__('CloseDate')" />
+            <div class="mt-4" style="margin-bottom: 4%">
+                <x-label for="CloseDate" :value="__('CloseDate')"  style="font-size: 17px"/>
         
                 <x-input id="CloseDate" class="block mt-1 w-full h-10" style="background-color:rgb(243, 235, 235);width:500px" type="date" name="CloseDate" :value="old('CloseDate')" required />
             </div>
