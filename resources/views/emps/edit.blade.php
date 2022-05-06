@@ -3,14 +3,11 @@
 
 @section('content')
 
-<div class="main_container" style=" width: (100% - 70px);
-margin-left: %; ">
+<div class="main_container" >
 
 <div class="row">
-    <div class="col-lg-12 margin-tb">
-        <div >
-            <h2>Edit Employee</h2>
-        </div>
+    <div class="col-lg-12 " style="margin-left: 7%;margin-top:2%">
+       
         <div >
             <a class="btn btn-primary" href="{{ route('emps.index') }}"> Back</a>
         </div>
@@ -35,53 +32,53 @@ margin-left: %; ">
     @method('PUT')
 
      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class=" col-md-12" style="margin-left: 10%">
             
-        <div class="mt-4">
-                <x-label for="Employee_Name" :value="__('Employee_Name')" />
+        <div class="mt-4" style="margin-bottom: 4%">
+                <x-label for="Employee_Name" :value="__('Employee_Name')" style="font-size: 15px"/>
         
                 <x-input id="Employee_Name" class="block mt-1 w-full h-10" style="background-color:rgb(243, 235, 235);width:500px" type="string" name="Employee_Name" value="{{$emp->Employee_Name}}"   required />
             </div>
 
-            <div class="mt-4">
-                <x-label for="Position" :value="__('Position')" />
+            <div class="mt-4" style="margin-bottom: 4%">
+                <x-label for="Position" :value="__('Position')" style="font-size: 15px"/>
         
                 <x-input id="Position" class="block mt-1 w-full h-10" style="background-color:rgb(243, 235, 235);width:500px" type="string" name="Position" value="{{$emp->Position}}"   required />
             </div>
         
         
-            <div class="mt-4">
-                <x-label for="Email" :value="__('Email')" />
+            <div class="mt-4" style="margin-bottom: 4%">
+                <x-label for="Email" :value="__('Email')" style="font-size: 15px"/>
         
                 <x-input id="Email" class="block mt-1 w-full h-10" style="background-color:rgb(243, 235, 235);width:500px" type="string" name="Email" value="{{$emp->Email}}"   required />
             </div>
 
-            <div>
-                <x-label for="Mobile_Num" :value="__('Mobile_Num')" />
+            <div style="margin-bottom: 4%">
+                <x-label for="Mobile_Num" :value="__('Mobile_Num')" style="font-size: 15px"/>
         
                 <x-input id="Mobile_Num" class="block mt-1 w-full h-10" style="background-color:rgb(243, 235, 235);width:500px" type="text" name="Mobile_Num" value="{{$emp->Mobile_Num}}" required autofocus />
             </div>
         
         
-            <div class="mt-4">
-                <x-label for="Team" :value="__('Team')" />
+            <div class="mt-4" style="margin-bottom: 4%">
+                <x-label for="Team" :value="__('Team')" style="font-size: 15px"/>
         
                 <x-input id="Team" class="block mt-1 w-full h-10" style="background-color:rgb(243, 235, 235);width:500px" type="unsignedBigInteger" name="Team" value="{{$emp->Team}}" required />
             </div>
-            <div>
-                <x-label for="Date" :value="__('Date')" />
+            <div style="margin-bottom: 4%">
+                <x-label for="Date" :value="__('Date')" style="font-size: 15px"/>
         
                 <x-input id="Date" class="block mt-1 w-full h-10" style="background-color:rgb(243, 235, 235);width:500px" type="text" name="Date" value="{{$emp->Date}}" required autofocus />
             </div>
         
         
-            <div class="mt-4">
-                <x-label for="Status" :value="__('Status')" />
+            <div class="mt-4" style="margin-bottom: 4%">
+                <x-label for="Status" :value="__('Status')" style="font-size: 15px"/>
         
                 <x-input id="Status" class="block mt-1 w-full h-10" style="background-color:rgb(243, 235, 235);width:500px" type="unsignedBigInteger" name="Status" value="{{$emp->Status}}" required />
             </div>
-            <div>
-                <x-label for="Profile_url" :value="__('Profile_url')" />
+            <div style="margin-bottom: 4%">
+                <x-label for="Profile_url" :value="__('Profile_url')" style="font-size: 15px"/>
         
                 <x-input id="Profile_url" class="block mt-1 w-full h-10" style="background-color:rgb(243, 235, 235);width:500px" type="string" name="Profile_url" value="{{$emp->Profile_url}}" required autofocus />
             </div>

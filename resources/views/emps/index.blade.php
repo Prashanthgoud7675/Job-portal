@@ -3,9 +3,8 @@
 
 @section('content')
 <br>
-<div class="main_container" style=" width: (100% - 70px);
-margin-left: %; ">
-    <div class="container">
+<div class="main_container" >
+    <div  style="width: 600px">
         <div class="row">
           
             <div class="col-md-12">
@@ -34,7 +33,7 @@ margin-left: %; ">
                             </div>
                         @endif
 
-                        <div class="table-responsive">
+                        <div class="table-responsive" style="width: 1200px">
 
                             <table class="table table-bordered">
                                 <tr>

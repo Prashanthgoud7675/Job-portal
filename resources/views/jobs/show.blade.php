@@ -5,25 +5,32 @@
 
 <div class="main_container" >
 
-     <div class="row">
-
-        
-
-        <div class="col-md-12">
+     
             <br>
 
 
 
+           <div style="margin-left: 7%;width:380px; ">
+
+            <div class="flex">
+                <a href="{{url('display')}}" style="margin-bottom: 7%;">  <i class="fa fa-angle-left" aria-hidden="true" style="font-size:30px;" ></i> </a> 
+                </div>
+               <div class="card" style="width: 20rem">
+
+                
+            <h1 style="margin-left: 5%; font-size:20px; margin-bottom:1%; color:rgb(170, 165, 165)"> {{ $job->JobTitle }}</h1>
+            
+            <h1 style="font-size: 25px; margin-left:2%; "> {{ $job->JobRole }}</h1>
            
 
-            <h1 style="margin-left: 3%; font-size:20px; margin-bottom:1%; color:rgb(170, 165, 165)"> {{ $job->JobTitle }}</h1>
-            
-            <div class="flex">
-            <a href="{{url('display')}}">  <i class="fa fa-angle-left" aria-hidden="true" style="font-size:30px;   " ></i> </a> <h1 style="font-size: 25px; margin-left:2%; "> {{ $job->JobRole }}</h1>
-            </div>
+
+               </div>
+
             <br>
             <div class="card" >
                
+
+
 
                 <div class="card-header">
                     <h1 style="color: rgb(112, 112, 112); margin-bottom:1%;font-size:17px">Job Title</h1>
@@ -41,6 +48,7 @@
                 </div>       
             </div>
 
+            <br>
             <br>
 
             <div class="card" >
@@ -72,22 +80,9 @@
             
 
          
-                  
-                    
-            
-                </div>  
-
-               
-            
-                    
+                </div>        
             </div>
-
-            
-
-
-
         </div>
-     </div>
 </div>
     
 @endsection

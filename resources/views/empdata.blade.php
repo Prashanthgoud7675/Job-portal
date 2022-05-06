@@ -6,7 +6,7 @@
 
     <div class="main_container" style=" width: (100% - 70px);">
 
-        <div class="row">
+        <div class="row" style="width: 700px">
             <div class="col-md-12" style="display: flex">
 
                 <h1 style="font-size: 27px;font-weight:600;margin-right:1%"> <b> {{ $count }} </b> </h1>
@@ -14,7 +14,7 @@
 
                 <div class="container" style="text-align: right">
 
-                    <a href="{{ url('empdata') }}"> <i class="fa fa-bars" style="margin-top:0%;font-size:25px;"></i> </a>
+                    <a href="{{ url('empdata') }}"> <i class="fa fa-bars" style="margin-left:800px;font-size:25px;"></i> </a>
                 </div>
 
             </div>
@@ -23,7 +23,7 @@
 
 
         <div class='container'>
-            <div class='row'>
+            <div class='row' style="700px">
                 @foreach ($data as $i)
                     <div class='col-md-4 col-lg-4' >
 
@@ -43,7 +43,7 @@
 
                             <br>
 
-                            <div style="background-color: #E0F2F7; margin:3%">
+                            <div style="background-color: #E0F2F7; margin:3%; padding-top:3%; padding-bottom:3%">
 
                                 <div style="display: flex;margin:5%">
                                     <h3 style="font-size:15px"> Department <br> {{ $i->Team }}</h3>

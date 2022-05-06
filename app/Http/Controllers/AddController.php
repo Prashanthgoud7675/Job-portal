@@ -57,7 +57,7 @@ class AddController extends Controller
 
         Add::create($request->all());
 
-        return redirect()->route('calender')
+        return redirect('calender')
             ->with('success', ' created successfully.');
     }
 

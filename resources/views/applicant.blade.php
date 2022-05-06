@@ -13,11 +13,14 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>HRMS</title>
+
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title>jQuery UI Draggable - Default functionality-codecheef.org</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+       
         <style>
             .list-group {
                 width: 225px;
@@ -54,7 +57,7 @@
                         </div>
                     </div>
                     <div class="status">
-                        <div style="width: 13rem;">
+                        <div style="width: 20rem;">
                             <h3 style="font-size:20px;">Time Line & Notes</h3>
 
                         </div>
@@ -71,11 +74,10 @@
             </div>
 
         
-         <div class="container"
-            style="  width: 0px; height: 1vh; display: flex; margin-left:5%;margin-right:15%;margin-top:3%">
+         <div class="container"  style=" display: flex; margin-left:5%;margin-right:15%;margin-top:3%">
             <div class="status" id="no_status">
 
-                <div style="width: 13rem;">
+                <div class="card" style="width: 20rem;">
 
                     <h3 style="font-size:20px;margin-top:-4%">
                         Total Candidates: <sapn style="background-color: #b34d4d; padding-left:7%;padding-right:7%">
@@ -90,18 +92,18 @@
 
 
 
-        <div style="  width: 1300px; height: 90vh; display: flex; margin-left:5%;margin-top:10%">
+        <div class="card" style="  width: 1300px; height: 90vh; display: flex; margin-left:5%;margin-top:5%">
             <div class="status" id="no_status" >
                 <div class="card" style="width: 22rem; border-top: 8px solid #0080ff">
 
                     <div style="display: flex">
-                        <h5 style="margin-left:5%;font-size:17px"> New Applied</h5>
+                        <h5 style="margin-left:5%;font-size:17px; padding-top:5px"> New Applied</h5>
                         <br>
 
                     </div>
                 </div>
                 
-                <div >
+                <div style="margin-top:5px"" >
 
                     <ul class="list-group connectedSortable" id="padding-item-drop" style="width: 22rem">
                         @if (!empty($panddingItem) && $panddingItem->count())
@@ -124,9 +126,9 @@
 
                                                 @while ($value->Rating > 0)
                                                     @if ($value->Rating > 0.5)
-                                                        <i class="fas fa-star"></i>
+                                                        <i class="fa fa-star checked"></i>
                                                     @else
-                                                        <i class="fas fa-star-half"></i>
+                                                        <i class="fa fa-star-half-o"></i>
                                                     @endif
                                                     @php $value->Rating--; @endphp
                                                 @endwhile
@@ -147,11 +149,11 @@
                 <div class="card" style="width: 22rem;border-top: 8px solid #008B8B">
 
                     <div style="display: flex">
-                        <h5 style="margin-left:5%;font-size:17px"> Screening</h5>
+                        <h5 style="margin-left:5%;font-size:17px;padding-top:5px"> Screening</h5>
 
                     </div>
                 </div>
-                <div >
+                <div style="width: 15rem; margin-top:5px"" >
 
                     <ul class="list-group  connectedSortable" id="complete-item-drop" style="width: 22rem">
                         @if (!empty($completeItem) && $completeItem->count())
@@ -174,9 +176,9 @@
 
                                                 @while ($value->Rating > 0)
                                                     @if ($value->Rating > 0.5)
-                                                        <i class="fas fa-star"></i>
+                                                        <i class="fa fa-star checked"></i>
                                                     @else
-                                                        <i class="fas fa-star-half"></i>
+                                                        <i class="fa fa-star-half-o"></i>
                                                     @endif
                                                     @php $value->Rating--; @endphp
                                                 @endwhile
@@ -198,12 +200,12 @@
                 <div class="card" style="width: 22rem;border-top: 8px solid #b34d4d">
 
                     <div style="display: flex">
-                        <h5 style="margin-left:5%;font-size:17px"> Interview </h5>
+                        <h5 style="margin-left:5%;font-size:17px;padding-top:5px"> Interview </h5>
 
                     </div>
                 </div>
 
-                <div>
+                <div style="width: 15rem;margin-top:5px"">
 
                     <ul class="list-group  connectedSortable" id="good-item-drop" style="width: 22rem">
                         @if (!empty($goodItem) && $goodItem->count())
@@ -226,9 +228,9 @@
 
                                                 @while ($value->Rating > 0)
                                                     @if ($value->Rating > 0.5)
-                                                        <i class="fas fa-star"></i>
+                                                        <i class="fa fa-star checked"></i>
                                                     @else
-                                                        <i class="fas fa-star-half"></i>
+                                                        <i class="fa fa-star-half-o"></i>
                                                     @endif
                                                     @php $value->Rating--; @endphp
                                                 @endwhile
@@ -249,15 +251,16 @@
 
 
             <div class="status" style="margin-left:4%">
-                <div class="card" style="width: 22rem;border-top: 8px solid #00ffff">
+                <div class="card" style="width: 22rem;border-top: 8px solid #00ffff; ">
 
-                    <div style="display: flex">
-                        <h5 style="margin-left:5%;font-size:17px"> Hired </h5>
+                    <div >
+                        <h5 style="margin-left:5%;font-size:17px; padding-top:5px"> Hired </h5>
 
                     </div>
                 </div>
+                
             
-                <div  style="width: 15rem" >
+                <div  style="width: 15rem;margin-top:5px" >
 
                     <ul class="list-group  connectedSortable" id="candidate-item-drop" style="width: 22rem">
                         @if (!empty($candidate) && $candidate->count())
@@ -281,9 +284,9 @@
 
                                                 @while ($value->Rating > 0)
                                                     @if ($value->Rating > 0.5)
-                                                        <i class="fas fa-star"></i>
+                                                        <i class="fa fa-star checked"></i>
                                                     @else
-                                                        <i class="fas fa-star-half"></i>
+                                                        <i class="fa fa-star-half-o"></i>
                                                     @endif
                                                     @php $value->Rating--; @endphp
                                                 @endwhile

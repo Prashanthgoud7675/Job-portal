@@ -3,14 +3,11 @@
 
 @section('content')
 
-<div class="main_container" style=" width: (100% - 70px);
-margin-left: %; ">
+<div class="main_container">
 
 <div class="row">
-    <div class="col-lg-12 margin-tb">
-        <div >
-            <h2>Edit Employee</h2>
-        </div>
+    <div class="col-lg-12 " style="margin-left:7%">
+       
         <div >
             <a class="btn btn-primary" href="{{ route('depts.index') }}"> Back</a>
         </div>
@@ -35,23 +32,23 @@ margin-left: %; ">
     @method('PUT')
 
      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-md-12" style="margin-left: 10%">
             
-        <div class="mt-4">
-                <x-label for="deptshortname" :value="__('deptshortname')" />
+        <div class="mt-4" style="margin-bottom: 5%">
+                <x-label for="deptshortname" :value="__('deptshortname')" style="font-size: 15px"/>
         
                 <x-input id="deptshortname" class="block mt-1 w-full h-10" style="background-color:rgb(243, 235, 235);width:500px" type="string" name="deptshortname" value="{{$dept->deptshortname}}"   required />
             </div>
 
-            <div class="mt-4">
-                <x-label for="deptname" :value="__('deptname')" />
+            <div class="mt-4" style="margin-bottom: 5%">
+                <x-label for="deptname" :value="__('deptname')" style="font-size: 15px"/>
         
                 <x-input id="deptname" class="block mt-1 w-full h-10" style="background-color:rgb(243, 235, 235);width:500px" type="string" name="deptname" value="{{$dept->deptname}}"   required />
             </div>
         
         
-            <div class="mt-4">
-                <x-label for="Remarks" :value="__('Remarks')" />
+            <div class="mt-4" style="margin-bottom: 5%">
+                <x-label for="Remarks" :value="__('Remarks')" style="font-size: 15px"/>
         
                 <x-input id="Remarks" class="block mt-1 w-full h-10" style="background-color:rgb(243, 235, 235);width:500px" type="string" name="Remarks" value="{{$dept->Remarks}}"   required />
             </div>

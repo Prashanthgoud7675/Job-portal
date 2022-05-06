@@ -33,7 +33,5 @@ class Job extends Model
         'ApplyLink',
         'CloseDate',
          ];
-
-
          
 }

@@ -6,510 +6,582 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
-        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
-        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
-    </script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&family=Montserrat:wght@500&family=Open+Sans+Condensed:wght@300&family=Quintessential&family=Ubuntu+Mono&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet" />
-
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
-
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
-    </script>
 
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title> XSILICA HRMS </title>
 
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+
     <script>
         $(document).ready(function() {
-            $(".hamburger").click(function() {
-                $(".wrapper").toggleClass("collapse");
+            $('#icon').click(function() {
+                $('ul').toggleClass('show');
             });
         });
     </script>
-    <style>
-        @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap');
 
+    <title>Document</title>
+
+
+    <style>
         * {
             margin: 0;
             padding: 0;
-            list-style: none;
-            text-decoration: none;
             box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
+        }
+
+        .sidebar.active .logo_content .logo_name {
+            display: flex;
+            height: 50px;
+            width: 100%;
+            opacity: 1;
+            margin-top: 27px;
+            font-size: 16px;
+            font-weight: 600;
+            color: aquamarine;
+        }
+
+        .sidebar .logo_content .logo_name {
+            display: flex;
+            height: 50px;
+            width: 100%;
+            align-items: center;
+            opacity: 1;
+            pointer-events: none;
+            margin-top: 25px;
+            margin-left: 10%;
+            font-size: 19px;
+            font-weight: 600;
+            color: aquamarine;
+        }
+
+        .sidebar.active .logo_content .logo {
+            opacity: 1;
+            pointer-events: none;
         }
 
         body {
-            background: #e1ecf2;
+            
         }
 
-        .wrapper {
-            margin: 10px;
-        }
-
-        .wrapper .top_navbar {
-            width: calc(100% - 20px);
-            height: 60px;
-            display: flex;
+        .sidebar {
             position: fixed;
-            top: 10px;
+            top: 0;
+            margin-top: 0%;
+            height: 100%;
+            width: 200px;
+            background: #191919;
+            padding: 10px 25px;
+            transition: all 0.5s ease;
+            border-bottom-left-radius: 12px;
+            border-top-left-radius: 12px;
         }
 
-        .wrapper .top_navbar .hamburger {
-            width: 220px;
-            height: 100%;
-            background: #fff;
-            padding: 15px 17px;
-            border-top-left-radius: 10px;
-            cursor: pointer;
+        .sidebar.active {
+            width: 90px;
         }
 
+        .sidebar #btn {
+            color: white;
+            position: absolute;
+            left: 80%;
+            top: 4px;
+            font-size: 20px;
+            line-height: 50px;
+        }
 
+        .sidebar.active #btn {
+            left: 75%;
+        }
 
-        .wrapper .top_navbar .top_menu {
-            width: calc(100% - 70px);
-            height: 100%;
-            background: #fff;
-            border-top-right-radius: 10px;
+        .sidebar .logo_content .logo img {
+            width: 130px;
+        }
+
+        .sidebar ul {
+            margin-top: 20px;
+        }
+
+        .sidebar ul li {
+            height: 50px;
+            width: 100%;
+            position: relative;
+            margin: 5px 15px;
+            line-height: 0px;
+        }
+
+        .sidebar.active ul li span {
+            opacity: 0;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            transition: all 0.4s ease;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            padding: 0 20px;
-            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            border-radius: 12px;
+        }
+
+        .sidebar ul li a:hover {
+            color: white;
+            background: #F1C40F;
+            padding: 10px;
+            height: 50px;
+            width: 100%;
+        }
+
+        .sidebar.active ul li a:hover {
+            color: white;
+            background: #F1C40F;
+            padding: 2px;
+            height: 50px;
+        }
+
+        .sidebar ul li a i {
+            height: 50px;
+            min-width: 50px;
+            border-radius: 12px;
+            line-height: 50px;
+            text-align: center;
+        }
+
+        .sidebar ul li .tooltip {
+            color: #191919;
+            font-size: 0px;
+        }
+
+        .sidebar.active ul li .tooltip {
+            color: #191919;
+            font-size: 17px;
+        }
+
+        .sidebar.active ul li .tooltip {
+            position: absolute;
+            left: 50px;
+            top: 0;
+            transform: translateY(-50%);
+            border-radius: 6px;
+            height: 35px;
+            width: 122px;
+            background: #fff;
+            line-height: 35px;
+            text-align: center;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            transition: 0s;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .sidebar ul li:hover .tooltip {
+            top: 50%;
+            opacity: 1;
+            transition: all 0.5s ease;
+        }
+
+        .sidebar ul h1 {
+            color: white;
+            font-size: 18px;
+            opacity: 1;
+            margin-top: 15%;
+            margin-bottom: 15%;
+        }
+
+        .sidebar.active ul h1 {
+            color: white;
+            opacity: 0;
+        }
+
+        nav {
+            position: fixed;
+            background: #D0D3D4;
+            height: 70px;
+            width: 99%;
+            border-top-right-radius: 25px;
+        }
+
+        .search-container {
+            margin-left: 20%;
+            padding-top: 1%;
+        }
+
+        nav ul {
+            float: right;
+            margin-right: 5%;
+            margin-top: -30px;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 8px;
+            
+            line-height: 50px;
+        }
+
+        nav ul form button {
+            margin-bottom: 0px;
+        }
+
+        nav a {
+            color: black;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        a.ctive,
+        a:hover {
+            background: whitesmoke;
+            padding: 5px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        nav #icon {
+            font-size: 20px;
+            line-height: 0px;
+            float: right;
+            margin-right: 35px;
+            margin-top: -25px;
+            cursor: pointer;
+            display: none;
+        }
+
+        @media (max-width:1048px) {
+            nav ul {
+                margin-right: 20px;
+            }
+
+            nav a {
+                font-size: 17px;
+            }
+        }
+
+        @media (max-width:909px) {
+            nav #icon {
+                display: block;
+            }
+
+            nav ul {
+                position: fixed;
+                width: 99%;
+                height: 13vh;
+                background: #979A9A;
+                top: 80px;
+                left: -100%;
+                text-align: center;
+                transition: all .5s;
+            }
+
+            .search-container {
+                margin-left: 30%;
+            }
+
+            nav ul li {
+                display: block;
+
+                line-height: 5px;
+            }
+
+            nav ul button {
+                margin-left: 20%;
+                color: whitesmoke;
+                margin-top: 3%;
+            }
+
+            nav a {
+                font-size: 19px;
+                color: whitesmoke;
+                margin-left: 20%;
+            }
+
+            a.active,
+            a:hover {
+                border: none;
+                background: whitesmoke;
+            }
+
+            nav ul.show {
+                left: 0;
+            }
+
+            .sidebar {
+                width: 90px;
+            }
+            .sidebar ul li .tooltip {
+                color: #191919;
+                font-size: 0px;
+            }
+            .sidebar ul li .tooltip {
+                color: #191919;
+                font-size: 17px;
+            }
+            .sidebar ul li .tooltip {
+                position: absolute;
+                left: 50px;
+                top: 0;
+                transform: translateY(-50%);
+                border-radius: 6px;
+                height: 35px;
+                width: 122px;
+                background: #fff;
+                line-height: 35px;
+                text-align: center;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+                transition: 0s;
+                opacity: 0;
+                pointer-events: none;
+            }
+            .sidebar ul li:hover .tooltip {
+                top: 50%;
+                opacity: 1;
+                transition: all 0.5s ease;
+            }
+            .sidebar ul h1 {
+                opacity: 0;
+            }
+            .sidebar ul li span {
+                opacity: 0;
+            }
+            .sidebar ul li a:hover {
+                color: white;
+                background: #F1C40F;
+                padding: 2px;
+                padding-right: 0px;
+                height: 50px;
+            }
+            .sidebar .logo_content .logo .logo_name {
+                opacity: 1;
+                font-size: 15px;
+            }
+            .sidebar .logo_content .logo img {
+                opacity: 1;
+                height: 30px;
+                width: 150px;
+            }
+
+
+
+           
         }
 
 
-
-        .wrapper .main_container {
-            width: (100% - 200px);
-            margin-top: 70px;
-            margin-left: 175px;
+        .main_container {
+            width: (100% - 700px);
+            margin-top: 80px;
+            margin-left: 190px;
             padding: 15px;
             transition: all 0.3s ease;
         }
 
-        .wrapper .main_container .item {
-            background: #fff;
-            margin-bottom: 10px;
-            padding: 15px;
-            font-size: 14px;
-            line-height: 22px;
-        }
+      
 
 
 
-        .wrapper.collapse .main_container {
-            width: (100% - 70px);
-            margin-left: 70px;
-        }
-
-
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        :root {
-
-            --body-color: #E4E9F7;
-            --sidebar-color: white;
-            --primary-color: #F1C40F;
-            --primary-color-light: blue;
-            --toggle-color: #DDD;
-            --text-color: #707070;
-
-
-            --tran-03: all 0.2s ease;
-            --tran-03: all 0.3s ease;
-            --tran-04: all 0.3s ease;
-            --tran-05: all 0.3s ease;
-        }
-
-        body {
-            min-height: 100vh;
-            background-color: var(--body-color);
-            transition: var(--tran-05);
-        }
-
-        ::selection {
-            background-color: var(--primary-color);
-            color: #fff;
-        }
-
-        body.dark {
-            --body-color: #18191a;
-            --sidebar-color: #242526;
-            --primary-color: #3a3b3c;
-            --primary-color-light: #3a3b3c;
-            --toggle-color: #18191a;
-            --text-color: #ccc;
-        }
-
-
-        .sidebar {
-            position: fixed;
-            top: 70px;
-            left: 10px;
-            height: 100%;
-            width: 180px;
-            padding: 10px 14px;
-            background: #191919;
-
-            z-index: 100;
-        }
-
-        .sidebar.close {
-            width: 88px;
-        }
-
-
-        .sidebar li {
-            height: 50px;
-            list-style: none;
-            display: flex;
-            align-items: center;
-            padding: 0%;
-            margin-top: 10px;
-        }
-
-        .sidebar header .image,
-        .sidebar .icon {
-            min-width: 60px;
-            border-radius: 6px;
-        }
-
-        .sidebar .icon {
-            min-width: 60px;
-            border-radius: 6px;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-        }
-
-        .sidebar .text,
-        .sidebar .icon {
-            color: var(--text-color);
-            transition: var(--tran-03);
-        }
-
-        .sidebar .text {
-            font-size: 17px;
-            font-weight: 500;
-            white-space: nowrap;
-            opacity: 1;
-        }
-
-        .sidebar.close .text {
-            opacity: 0;
-        }
-
-
-        .sidebar header {
-            position: relative;
-        }
-
-
-
-
-
-
-        .sidebar header .toggle {
-            position: absolute;
-            top: 50%;
-            right: -25px;
-            transform: translateY(-50%) rotate(180deg);
-            height: 25px;
-            width: 25px;
-            background-color: var(--primary-color);
-            color: var(--sidebar-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            cursor: pointer;
-            transition: var(--tran-05);
-        }
-
-        body.dark .sidebar header .toggle {
-            color: var(--text-color);
-        }
-
-        .sidebar.close .toggle {
-            transform: translateY(-50%) rotate(0deg);
-        }
-
-        .sidebar .menu {
-            margin-top: 40px;
-        }
-
-
-
-
-        .sidebar li a {
-            list-style: none;
-            height: 100%;
-            background-color: transparent;
-            display: flex;
-            align-items: center;
-            height: 100%;
-            width: 100%;
-            border-radius: 6px;
-            text-decoration: none;
-            transition: var(--tran-03);
-        }
-
-        .sidebar li a:hover {
-            background-color: #F1C40F;
-            padding-right: 15%;
-            width: 100%;
-        }
-
-        .sidebar li a:hover .icon,
-        .sidebar li a:hover .text {
-            color: var(--sidebar-color);
-        }
-
-        body.dark .sidebar li a:hover .icon,
-        body.dark .sidebar li a:hover .text {
-            color: var(--text-color);
-        }
-
-        .sidebar .menu-bar {
-            height: calc(100% - 55px);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            overflow-y: scroll;
-        }
-
-        .menu-bar::-webkit-scrollbar {
-            display: none;
-        }
+        
 
     </style>
 </head>
 
 <body>
 
+    <div class="navbar">
+        <nav>
 
 
 
-    <div class="wrapper">
 
-        <div class="top_navbar">
-            <div class="hamburger" style="margin-left: 0%">
+            <div class="search-container">
 
-                <img src="https://xsilica.com/images/xsilica_broucher_final_modified_05082016-2.png" alt="">
+                <form action=" {{ url('display') }}" method="GET" role="search">
+
+                    <div class="input-group">
+                        <input type="text" placeholder="Search Jobs" name="term" placeholder="Search Jobs" id="term"
+                            style="height:32px;width:300px">
+                        <button type="submit" class="btn btn-info active"><i class="fa fa-search"
+                                style="padding-left:7px"></i></button>
+
+                    </div>
+                </form>
 
 
             </div>
-            <div class="top_menu">
 
-                <div class="search-container">
-                    <form action=" {{ url('display') }}" method="GET" role="search">
 
-                        <div class="input-group">
-                            <input type="text" placeholder="Search Jobs" name="term" placeholder="Search Jobs" id="term"
-                                style="height:32px;width:300px">
-                            <button type="submit" class="btn btn-info active"><i class="fa fa-search"
-                                    style="padding-left:7px"></i></button>
+            <ul>
 
-                        </div>
+                @auth
+
+                    <li>
+                        <img src="{{ auth()->user()->profile_url }}"
+                            style="width:40px;height:40px;border-radius:50%;margin-top:0%;margin-right:0%">
+                    </li>
+                    <li>
+                        <a href="#"> {{ auth()->user()->name }}</a>
+                    </li>
+
+                    <li>
+
+
+                    <form action="{{ route('logout') }}" method="post" class="dropdown-item" href="">
+
+                        @csrf
+
+                        <button type="submit"><span class="glyphicon glyphicon-log-in"></span> logout</button>
+
+
                     </form>
 
+                    </li>
 
+                @endauth
 
-                </div>
-                <div class="dropdown" style="display:flex">
-                    @auth
-                        <img src="{{ auth()->user()->profile_url }}"
-                            style="width:40px;height:40px;border-radius:50%;margin-top:2%;margin-right:2%">
-                        <button class=" dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false" style="font-weight:700">
-                            {{ auth()->user()->name }}
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">
-                                <form action="{{ route('logout') }}" method="post" class="dropdown-item" href="">
+            </ul>
 
-                                    @csrf
-
-                                    <button type="submit" style="font-size: 18px">Logout</button>
-
-                                </form>
-                            </a>
-
-                        </div>
-                    @endauth
-
-                </div>
-
-
-
-            </div>
-        </div>
-
-
-        <nav class="sidebar close">
-            <header>
-
-                <i class='bx bx-chevron-right toggle'></i>
-            </header>
-
-
-
-            <div class="menu-bar">
-                <div class="menu">
-
-                    <h1 class="text-center" style="color: white;font-size:23px">XSILICA HRMS</h1>
-                    <hr style="color:#fed758;height:2px;widht:100%">
-
-                    <ul class="menu-links">
-                        <li class="nav-link">
-                            <a href="/">
-                                <i class="fa fa-dashboard " style="color: white;"></i>
-                                <span class="text nav-text" style="margin-left: 5%; color:white">Dashboard</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-link">
-                            <a href="calender">
-                                <i class="fas fa-calendar-alt" style="color: white;"></i>
-                                <span class="text nav-text" style="margin-left: 5%; color:white">Calendar</span>
-                            </a>
-                        </li>
-                        <h5 style="color:#f9f9f9;padding:7%; font-size:17px"> RECRUITMENT</h5>
-                        <li class="nav-link">
-                            <a href="display">
-                                <i class="fas fa-briefcase" style="color: white;"></i>
-                                <span class="text nav-text" style="margin-left: 5%; color:white">Jobs</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-link">
-                            <a href="candidates">
-                                <i class="fas fa-user-friends" style="color: white;"></i>
-                                <span class="text nav-text" style="margin-left: 5%; color:white">Candidates</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-link">
-                            <a href="referrals">
-                                <i class="fas fa-clone" style="color: white;"></i>
-                                <span class="text nav-text" style="margin-left: 5%; color:white">My Referrals</span>
-                            </a>
-                        </li>
-                        <h1 style="color:#f9f9f9;padding:5%; font-size:17px"> ORGANIZATION</h1>
-
-                        <li class="nav-link">
-                            <a href=" {{ route('employe.index') }}">
-                                <i class="fas fa-user" style="color: white;"></i>
-                                <span class="text nav-text" style="margin-left: 5%; color:white">Employee</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-link">
-                            <a href="structure" style="color: white;">
-                                <i class="fas fa-sitemap"></i>
-                                <span class="text nav-text" style="margin-left: 5%; color:white">Structure</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-link">
-                            <a href="settings" style="color: white;">
-                                <i class="fas fa-cog"></i>
-                                <span class="text nav-text" style="margin-left: 5%; color:white">Settings</span>
-                            </a>
-                        </li>
-
-                    </ul>
-                </div>
-
-
-            </div>
-
+            <label id="icon" style="margin-left: 70%;"><i class="fa fa-bars"></i>
+            </label>
         </nav>
 
-
-        <script>
-            const body = document.querySelector('body'),
-                sidebar = body.querySelector('nav'),
-                toggle = body.querySelector(".toggle"),
-                searchBtn = body.querySelector(".search-box"),
-                modeSwitch = body.querySelector(".toggle-switch"),
-                modeText = body.querySelector(".mode-text");
+    </div>
 
 
-            toggle.addEventListener("click", () => {
-                sidebar.classList.toggle("close");
-            })
 
-            searchBtn.addEventListener("click", () => {
-                sidebar.classList.remove("close");
-            })
+    <div class="sidebar">
+        <div class="logo_content">
+            <div class="logo">
+                <a href="/">
+                    <img src="https://xsilica.com/images/xsilica_broucher_final_modified_05082016-2.png" alt="logo">
+                </a>
+                
+                <div class="logo_name">XSILICA HRMS</div>
 
-            modeSwitch.addEventListener("click", () => {
-                body.classList.toggle("dark");
-
-                if (body.classList.contains("dark")) {
-                    modeText.innerText = "Light mode";
-                } else {
-                    modeText.innerText = "Dark mode";
-
-                }
-            });
-        </script>
+            </div>
 
 
-        @yield('content')
+
+        </div>
+        <ul class="nav_list">
+            <li>
+                <a href="/">
+                    <i class="fa fa-dashboard "></i>
+
+                    <span class="links_name">Dashboard</span>
+
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+
+            <li>
+                <a href="calender">
+                    <i class="fa fa-calendar"></i>
+
+                    <span class="text nav-text">Calendar</span>
+
+                </a>
+                <span class="tooltip">Calendar</span>
+            </li>
+
+            <h1>RECRUITMENT</h1>
+
+            <li>
+                <a href="display">
+                    <i class="fa fa-briefcase "></i>
+
+                    <span class="text nav-text">Jobs</span>
+
+                </a>
+                <span class="tooltip">Jobs</span>
+            </li>
+
+            <li>
+                <a href="candidates">
+                    <i class="fa fa-group"></i>
+
+                    <span class="text nav-text">Candidates</span>
+
+                </a>
+                <span class="tooltip">Candidates</span>
+            </li>
+
+            <li>
+                <a href="referrals">
+                    <i class="fa fa-clone "></i>
+
+                    <span class="text nav-text">My Referrals</span>
+
+                </a>
+                <span class="tooltip">My Referrals</span>
+            </li>
+
+            <h1>ORGANIZATION</h1>
+
+            <li>
+                <a href="{{ route('employe.index') }}">
+                    <i class="fa fa-user "></i>
+
+                    <span class="text nav-text">Employee</span>
+
+                </a>
+                <span class="tooltip">Employee</span>
+            </li>
+
+            <li>
+                <a href="structure">
+                    <i class="fa fa-sitemap "></i>
+
+                    <span class="text nav-text">Structure</span>
+
+                </a>
+                <span class="tooltip">Structure</span>
+            </li>
+
+            <li>
+                <a href="settings">
+                    <i class="fa fa-cog "></i>
+
+                    <span class="text nav-text">Settings</span>
+
+                </a>
+                <span class="tooltip">Settings</span>
+            </li>
+
+        </ul>
+
+    </div>
+
+    
+
+
+    <script>
+        let btn = document.querySelector("#btn");
+        let sidebar = document.querySelector(".sidebar");
+
+
+        btn.onclick = function() {
+            sidebar.classList.toggle("active");
+        }
+    </script>
+
+
+
+
+
+    @yield('content')
+
+
 
 
 </body>

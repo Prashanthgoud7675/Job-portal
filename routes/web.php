@@ -16,9 +16,9 @@ use Haruncpi\LaravelIdGenerator\IdGenerator;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\AddController;
 
-use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LogoutController;
 
 
 /*
@@ -81,11 +81,7 @@ Route::post('/save',[StudentController::class, 'save'])->name('save');
 
 Route::resource('/jobs', JobController::class);
 
-
-
-
 Route::get('display', [App\Http\Controllers\SearchController::class,'index']);
-
 
 Route::resource('/employe', EmployeController::class);
 
@@ -95,14 +91,12 @@ Route::get('settings', function () {
     return view('settings');
 })->name('settings');
 
-
 Route::get('applicant', [ApplicantController::class,'itemView']);
 Route::post('/update-items', [ApplicantController::class, 'updateItems'])->name('update.items');
 
 Route::resource('/depts', DeptController::class);
 
 Route::resource('/emps', EmpController::class);
-
 
 
 Route::post('/logout', [LogoutController::class, 'store']) ->name('logout');
