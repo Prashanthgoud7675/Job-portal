@@ -32,7 +32,7 @@
     @method('PUT')
 
      <div class="row">
-        <div class=" col-md-12" style="margin-left: 10%">
+        <div class=" col-md-12" style="margin-left: 15%">
             
         <div class="mt-4" style="margin-bottom: 4%">
                 <x-label for="Employee_Name" :value="__('Employee_Name')" style="font-size: 15px"/>

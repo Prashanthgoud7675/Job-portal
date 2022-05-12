@@ -36,7 +36,7 @@ margin-left: %; ">
 
 
      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-12 col-sm-12 col-md-12" style="margin-left: 15%">
             
         <div class="mt-4">
                 <x-label for="Employee_Name" :value="__('Employee_Name')" />

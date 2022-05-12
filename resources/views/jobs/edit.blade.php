@@ -5,16 +5,19 @@
 
     <div class="main_container" ">
 
+        <br>
+    <br>
+    <br>
+
         <div class="row">
-            <div class="col-lg-12 margin-tb" style="margin-left: 10%;">
-                <div>
-                    <h2>Edit Job</h2>
-                </div>
+            <div class="col-lg-12 margin-tb" style="margin-left: 7%;">
+               
                 <div>
                     <a class="btn btn-primary" href="{{ route('jobs.index') }}"> Back</a>
                 </div>
             </div>
         </div>
+        <br>
 
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -34,7 +37,7 @@
                 @method('PUT')
 
                 <div class="row" >
-                    <div class=" col-md-12" style="margin-left: 10%">
+                    <div class=" col-md-12" style="margin-left: 14%">
                         <div style="margin-bottom: 4%">
                             <x-label for="job_id" :value="__('job_id')"  style="font-size: 17px"/>
 

@@ -6,7 +6,7 @@
 
     <head></head>
 
-    <body style="background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);">
+    <body style="background-color:whitesmoke">
 
         <br>
 
@@ -35,7 +35,7 @@
                 <div>
                     <div class="card" style="width: 1200px;">
 
-                        <div class="table-responsive" style="background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);">
+                        <div class="table-responsive" style="background-color:#d4d4d3">
 
                             <table class="table ">
 

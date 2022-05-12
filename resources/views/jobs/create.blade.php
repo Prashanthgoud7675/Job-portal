@@ -2,8 +2,10 @@
 
 
 @section('content')
-<div class="main_container" style=" width: (100% - 70px);
-margin-left: %; ">
+<div class="main_container">
+    <br>
+    <br>
+    <br>
 
 <div class="row">
     
@@ -31,7 +33,7 @@ margin-left: %; ">
 <form action="{{ route('save') }}" method="POST">
     @csrf
      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-12 col-sm-12 col-md-12" style="margin-left: 15%">
             
         
         

@@ -2,17 +2,19 @@
 
 
 @section('content')
-<div class="main_container" style=" width: (100% - 70px);
-    margin-left: %; ">
+<div class="main_container" >
+    <br>
+    <br>
+    <br>
     <div class="container">
 
         <div class="row">
            
-            <div class="col-md-10">
+            <div class="col-md-10" style="width: 1000px">
                 <div class="card">
-                    <div class="card-header">Applicants</div>
+
                     <div class="card-body">
-                        <div class="table-responsive">
+                        <div class="table-responsive" style="background-color: #ffc6b3">
                             <table class="table table-bordered">
 
                                 <tr>

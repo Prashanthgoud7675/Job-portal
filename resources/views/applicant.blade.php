@@ -31,8 +31,9 @@
         </style>
     </head>
 
-    <body style="background-image: linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%);">
+    <body style="background-color:whitesmoke;">
         <div class="main_container">
+            <br>
             <br>
 
 

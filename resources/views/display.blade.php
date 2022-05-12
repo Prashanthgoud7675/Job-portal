@@ -4,13 +4,15 @@
 <html>
     <head></head>
 
-    <body style="background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); ">
+    <body style="background-color:white">
 
         <div >
             <div class="main_container">
          
               <br>
               <br>
+              <br>
+            
         
               <div class="container" style="display: flex" >
                   
@@ -53,9 +55,9 @@
                     <div class = 'row'>
                         @foreach ($data as $i)
                         <div class = 'col-md-2 col-lg-2' style="margin-bottom: 20px">
-                          <div class="card" style="width: 17rem; border-radius:10px; background-color:rgb(225, 222, 222)">
+                          <div class="card" style="width: 17rem; border-radius:15px; background-color:rgb(225, 222, 222)">
                           
-                            <div class="card-header" style="background-color:#fdb7b7;height:25px">
+                            <div class="card-header" style="background-color:#ff6666;height:25px; border-top-left-radius:15px">
                                 <h5 style="float:right;padding-bottom:5%;padding-top:2%;padding-right:3%;font-size:17px">{{ $i->job_id }}</h5>
                             </div>
         
@@ -65,7 +67,7 @@
                             <h5 style="margin-left:3%;padding-bottom:20%;padding-left:5%;margin-top:3%;font-size:17px">{{ $i->JobRole }}</h5>
         
                             
-                            <div  style="display: flex;background-color:rgb(225, 222, 222);padding:10%; margin-left:10%; margin-right:10%;border-radius:10px">
+                            <div  style="display: flex;padding:10%; margin-left:10%; margin-right:10%;border-radius:10px">
                                 <div class="vl" style="border-left: 2px solid green;height: 50px; margin-left:5%">
                                 
                                 

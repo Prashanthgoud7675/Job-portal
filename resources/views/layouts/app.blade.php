@@ -205,7 +205,7 @@
 
         nav {
             position: fixed;
-            background: #D0D3D4;
+            background: #C0C0C0;
             height: 70px;
             width: 99%;
             border-top-right-radius: 25px;
@@ -268,6 +268,10 @@
         }
 
         @media (max-width:909px) {
+           nav{
+               
+           }
+           
             nav #icon {
                 display: block;
             }
@@ -421,13 +425,13 @@
 
                     <li>
                         <img src="{{ auth()->user()->profile_url }}"
-                            style="width:40px;height:40px;border-radius:50%;margin-top:0%;margin-right:0%">
+                            style="width:40px;height:40px;border-radius:50%;margin-bottom:0%;">
                     </li>
                     <li>
-                        <a href="#"> {{ auth()->user()->name }}</a>
+                        <a href="#" > {{ auth()->user()->name }}</a>
                     </li>
 
-                    <li>
+                    <li >
 
 
                     <form action="{{ route('logout') }}" method="post" class="dropdown-item" href="">

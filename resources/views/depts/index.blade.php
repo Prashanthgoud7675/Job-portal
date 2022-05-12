@@ -34,7 +34,7 @@
                                 </div>
                             @endif
 
-                            <div class="table-responsive" style="width: 1100px">
+                            <div class="table-responsive" style="width: 1100px; background-color:#dee1e2">
 
                                 <table class="table table-bordered">
                                     <tr>

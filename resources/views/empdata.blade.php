@@ -5,9 +5,7 @@
 
 <html>
     <head></head>
-    <body style="background: #C9CCD3;
-    background-image: linear-gradient(-180deg, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%);
-    background-blend-mode: lighten;">
+    <body style="background-color:white">
 
         <br>
 
@@ -32,7 +30,7 @@
                         <div class='col-md-4 col-lg-4' >
     
                             <div class="card"
-                                style="width: 25rem;height:350px; margin:10px; background-color:whitesmoke; border:none; ">
+                                style="width: 25rem;height:350px; background-color: #d9ddde; border:none; border-top-left-radius:15px; border-bottom-right-radius:15px; border-bottom-left-radius:15px; ">
     
                                 <br>
     
@@ -47,7 +45,7 @@
     
                                 <br>
     
-                                <div style="background-color: #E0F2F7; margin:3%; padding-top:3%; padding-bottom:3%">
+                                <div style="background-color: #b3d9ff; margin:3%; padding-top:3%; padding-bottom:3%">
     
                                     <div style="display: flex;margin:5%">
                                         <h3 style="font-size:15px"> Department <br> {{ $i->Team }}</h3>
@@ -63,8 +61,11 @@
     
                                 </div>
                             </div>
+
+                            <br>
     
                         </div>
+
                     @endforeach
                 </div>
             </div>

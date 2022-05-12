@@ -5,7 +5,7 @@
 
 <html>
     <head></head>
-    <body style="background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%); ">
+    <body style="background-color:white">
 
         <div class="main_container" style="margin-top: 10%">
             <br>
@@ -14,7 +14,7 @@
     
             <div class="row" >
                 
-                <div class="col-md-4 " style="background-color: whitesmoke;margin-left:2%;padding:2%;width:500px">
+                <div class="col-md-4 " style="background-color: #c6ecd9;margin-left:2%;padding:2%;width:500px">
                     
                         <a href="jobs" style="text-decoration:none; color:black;"> <b> <h1 style="margin-top: 2%;color:#047b6f;font-size:17px">  Update Jobs </h1> </b>  </a>
                     
@@ -25,7 +25,7 @@
             <br>
             
             <div class="row">
-                <div class="col-md-4" style="background-color: whitesmoke;margin-left:2%;padding:2%;width:500px">
+                <div class="col-md-4" style="background-color: #c6ecd9;margin-left:2%;padding:2%;width:500px">
                 <a href="emps" style="text-decoration:none; color:black;"> <b> <h1 style="margin-top: 2%;color:#09897d;font-size:17px"> Update Employees </h1> </b>  </a> 
                     
                 </div>
@@ -33,7 +33,7 @@
             <br>
             
             <div class="row">
-                <div class="col-md-4 col-lg-4" style="background-color: whitesmoke;margin-left:2%;padding:2%;width:500px">
+                <div class="col-md-4 col-lg-4" style="background-color: #c6ecd9;margin-left:2%;padding:2%;width:500px">
                     <a href="depts" style="text-decoration:none; color:black;"> <b> <h1 style="margin-top: 2%;color:#09897d;font-size:17px"> Update Departments </h1> </b>  </a>
                     
                 </div>
