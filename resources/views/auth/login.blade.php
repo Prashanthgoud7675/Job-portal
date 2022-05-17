@@ -38,7 +38,7 @@
                 <div class="flex justify-center">
                     <img src="https://imagizer.imageshack.com/img923/5138/bRZo8P.png" alt="logo" height="170px"
                         width="150px">
-                        
+
                 </div>
                 <br>
                 <div class="flex justify-center" style="margin-top: 0%">
@@ -48,6 +48,18 @@
                         @if (session('status'))
                             <div class="bg-red-500 p-4 rounded-lg mb-6 text-white text-center">
                                 {{ session('status') }}
+                            </div>
+                        @endif
+
+                        @if (session('message'))
+                        <div class="alert alert-success-500 p-4 rounded-lg mb-6 text-white text-center">
+                            {{ session('message') }}
+                        </div>
+                    @endif
+
+                        @if ($message = Session::get('success'))
+                            <div class="alert alert-success" style="width: 375px;  ">
+                                <p>{{ $message }}</p>
                             </div>
                         @endif
 
@@ -83,7 +95,7 @@
                                     </div>
                                 @enderror
                             </div>
-
+                            <a href="{{route('forget.password.get')}}" > <h1 style="font-size: 17px; font-weight:600; margin-left: 60%; margin-bottom:5%;color:dodgerblue"> Forgot Password! </h1> </a>
 
 
 
@@ -96,7 +108,7 @@
 
 
 
-                            <a href="register" style="color:dodgerblue">create an account now!</a>
+                            <a href="register" >  <h1 style="font-size: 17px; font-weight:600; margin-left: 0%; margin-bottom:5%;color:dodgerblue"> create an account now! </h1> </a>
 
 
                         </form>

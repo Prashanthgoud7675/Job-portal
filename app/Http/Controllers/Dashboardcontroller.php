@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Event;
 use App\Models\Dept;
 use App\Models\Emp;
+use App\Models\User;
+use App\Models\Item;
 
 class DashboardController extends Controller
 {
@@ -19,10 +21,25 @@ class DashboardController extends Controller
         $data = Event::all();
         $dept = Dept::all();
         $emp = Emp::all();
+        $value = User::all();
 
         $count = Emp::count();
+
+        $NewApplied = Item::where('status', 0)
+			
+			->get()->count();
+		$Screening = Item::where('status', 1)
+			
+			->get()->count();
+		$Interview = Item::where('status', 2)
+			
+			->get()->count();
+
+       $Hired = Item::where('status', 3)
+			
+			->get()->count();  
         
-        return view('dashboard', ['data' => $data, 'dept'=>$dept, 'emp' => $emp, 'count' => $count]);
+        return view('dashboard', ['data' => $data, 'dept'=>$dept, 'emp' => $emp, 'value' => $value, 'count' => $count,'NewApplied' => $NewApplied, 'Screening'=>$Screening, 'Interview' => $Interview, 'Hired' => $Hired,]);
     }
 
     /**

@@ -21,6 +21,16 @@
 
 
 
+    
+    
+
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+
+   
+   
 
 
 
@@ -218,7 +228,7 @@
 
         nav ul {
             float: right;
-            margin-right: 5%;
+            margin-right: 10%;
             margin-top: -30px;
         }
 
@@ -257,6 +267,23 @@
             display: none;
         }
 
+        nav ul li .dropdown .dropdown-menu .dropdown-item:hover{
+            background: #F1C40F;
+            padding: 3px;
+            border-radius: 10px;
+            margin:5px;
+
+        }
+
+        nav ul li .dropdown .dropdown-menu a h1:hover{
+            background: #F1C40F;
+            padding:5px;
+            border-radius: 10px;
+            margin:5px;
+        }
+
+      
+
         @media (max-width:1048px) {
             nav ul {
                 margin-right: 20px;
@@ -276,6 +303,7 @@
                 display: block;
             }
 
+
             nav ul {
                 position: fixed;
                 width: 99%;
@@ -291,10 +319,23 @@
                 margin-left: 30%;
             }
 
+            nav ul li img{
+                
+               display: none;
+
+            }
+            
+            nav ul li h1{
+               
+                color: black;
+            }
+
+            
             nav ul li {
                 display: block;
-
+                margin-left: 40%;
                 line-height: 5px;
+                
             }
 
             nav ul button {
@@ -314,6 +355,24 @@
                 border: none;
                 background: whitesmoke;
             }
+
+            nav ul li .dropdown .dropdown-menu .dropdown-item:hover{
+                background: #F1C40F;
+                padding: 3px;
+                border-radius: 10px;
+                margin:5px;
+    
+            }
+    
+            nav ul li .dropdown .dropdown-menu a h1:hover{
+                background: #F1C40F;
+                padding:5px;
+                border-radius: 10px;
+                margin:5px;
+            }
+    
+
+ 
 
             nav ul.show {
                 left: 0;
@@ -423,27 +482,44 @@
 
                 @auth
 
+                
+
                     <li>
                         <img src="{{ auth()->user()->profile_url }}"
                             style="width:40px;height:40px;border-radius:50%;margin-bottom:0%;">
                     </li>
-                    <li>
-                        <a href="#" > {{ auth()->user()->name }}</a>
-                    </li>
 
                     <li >
 
+                        <div class="dropdown" style="display:flex">
+                            
+                                
+                                <button class=" dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false" style="font-weight:700">
+                                    <h1> {{ auth()->user()->name }} <i class="	fa fa-sort-down" style="font-size: 20px; padding-top:-3%" ></i> </h1> 
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="width: 200px">
+                                    <a class="dropdown-item" href="#">
+                                        <form action="{{ route('logout') }}" method="post" class="dropdown-item" href="">
+        
+                                            @csrf
+        
+                                            <button type="submit"  > <h1 style="margin-left: 100%"> Logout </h1> </button>
+                                            
+        
+                                        </form>
+                                    </a>
 
-                    <form action="{{ route('logout') }}" method="post" class="dropdown-item" href="">
-
-                        @csrf
-
-                        <button type="submit"><span class="glyphicon glyphicon-log-in"></span> logout</button>
-
-
-                    </form>
-
+                                    <a  href="change-password"> <h1 style="padding-left: 10%;margin-bottom:3%;margin-top:2%"> Change Password </h1></a>
+        
+                                </div>
+                        
+        
+                        </div>
                     </li>
+                   
+
+                    
 
                 @endauth
 
@@ -584,5 +660,4 @@
 
 
 </body>
-
 </html>

@@ -1,0 +1,42 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
+Use Auth;
+
+class PasswordController extends Controller
+{
+
+    public function index()
+    {
+         return view('change-password');
+    }
+
+    public function changepassword(){
+        return view('change-password');
+    }
+
+    public function updatepassword(Request $request){
+
+        
+
+        $request->validate([
+            'old_password' => 'required',
+            'new_password' => 'required|confirmed',
+        ]);
+  
+        if(!Hash::check($request->old_password,auth()->user()->password)){
+            return back()->with("error","old password doesnot match!");
+        }
+        
+        User::whereId(auth()->user()->id)->update([
+            'password' => Hash::make($request->new_password)
+
+        ]);
+        return redirect('/login')->with("success","password changed succesfully!");
+    }
+    
+}

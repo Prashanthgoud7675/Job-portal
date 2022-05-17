@@ -12,7 +12,8 @@ class Event extends Model
     protected $table="events";
 
     protected $fillable = [
-		'title', 'start', 'end', 'starting', 'ending'
+		'title', 'start', 'end'
 	];
+
     
 }

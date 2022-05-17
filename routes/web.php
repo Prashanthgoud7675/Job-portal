@@ -15,6 +15,9 @@ use App\Http\Controllers\DisplayController;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\AddController;
+use App\Http\Controllers\PasswordController;
+use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\Auth\UserController;
 
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
@@ -111,4 +114,18 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 Route::resource('/project', AddController::class);
 
+Route::get('/change-password', [PasswordController::class, 'changepassword']) ->name('change-password');
+Route::post('/change-password', [PasswordController::class, 'updatepassword']) ->name('update-password');
+
+
+
+
+  
+Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
+Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post'); 
+Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
+Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
+
+Route::get('profile', [UserController::class, 'profile']);
+Route::post('profile',[UserController::class, 'update_avatar']);
 require __DIR__.'/auth.php';
