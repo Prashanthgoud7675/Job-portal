@@ -17,7 +17,7 @@ class JobFactory extends Factory
     public function definition()
     {
         return [
-            'JobId' => $this->faker->JobId(),
+            'JobId' => $this->faker->job_id(),
             'JobTitle' => $this->faker->JobTitle(),
             'JobRole' => $this->faker->JobRole(),
             'Description' => $this->faker->Description(),

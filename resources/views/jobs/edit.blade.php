@@ -39,11 +39,11 @@
                 <div class="row" >
                     <div class=" col-md-12" style="margin-left: 14%">
                         <div style="margin-bottom: 4%">
-                            <x-label for="job_id" :value="__('job_id')"  style="font-size: 17px"/>
+                            <x-label for="JobId" :value="__('JobId')"  style="font-size: 17px"/>
 
-                            <x-input id="job_id" class="block mt-1  h-10"
-                                style="background-color:rgb(243, 235, 235);width:500px" type="string" name="job_id"
-                                value="{{ $job->job_id }}" required autofocus />
+                            <x-input id="JobId" class="block mt-1  h-10"
+                                style="background-color:rgb(243, 235, 235);width:500px" type="string" name="JobId"
+                                value="{{ $job->JobId }}" required autofocus />
                         </div>
 
                         <div class="mt-4" style="margin-bottom: 4%">

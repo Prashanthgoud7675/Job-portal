@@ -48,9 +48,9 @@ class StudentController extends Controller
         $CloseDate = $request->CloseDate;
         
         
-        $job_id = helper::IDGenerator(new Student, 'job_id', 2, 'DV22'); /** Generate id */
+        $JobId = helper::IDGenerator(new Student, 'JobId', 2, 'DV22'); /** Generate id */
         $q = new Student;
-        $q->job_id = $job_id;
+        $q->JobId = $JobId;
         $q->JobTitle = $JobTitle;
         $q->JobRole = $JobRole;
         $q->Description = $Description;

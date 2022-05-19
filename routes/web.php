@@ -18,10 +18,12 @@ use App\Http\Controllers\AddController;
 use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\Auth\UserController;
+use App\Http\Controllers\DemoController;
 
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
+use RealRashid\SweetAlert\Facades\Alert;
 
 
 /*
@@ -94,8 +96,9 @@ Route::get('settings', function () {
     return view('settings');
 })->name('settings');
 
-Route::get('applicant', [ApplicantController::class,'itemView']);
+Route::get('applicant', [ApplicantController::class,'itemView'])->name('filter');
 Route::post('/update-items', [ApplicantController::class, 'updateItems'])->name('update.items');
+
 
 Route::resource('/depts', DeptController::class);
 
@@ -128,4 +131,6 @@ Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPass
 
 Route::get('profile', [UserController::class, 'profile']);
 Route::post('profile',[UserController::class, 'update_avatar']);
+
+
 require __DIR__.'/auth.php';

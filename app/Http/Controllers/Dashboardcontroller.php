@@ -9,6 +9,7 @@ use App\Models\Emp;
 use App\Models\User;
 use App\Models\Item;
 
+
 class DashboardController extends Controller
 {
     /**
@@ -18,9 +19,11 @@ class DashboardController extends Controller
      */
     public function index()
     {
+       
+
         $data = Event::all();
         $dept = Dept::all();
-        $emp = Emp::all();
+        $emp = Emp::query()->take(5)->get();
         $value = User::all();
 
         $count = Emp::count();

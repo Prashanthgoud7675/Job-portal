@@ -4,15 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Models\Applicant;
 use App\Models\Item;
+use App\Models\Job;
+use App\Models\Product;
+use App\Models\Price;
 use App\Models\Screening;
 use Illuminate\Http\Request;
 
 class ApplicantController extends Controller
 {
 
-  public function itemView()
+	
+
+
+
+  public function itemView(Request $request)
 	{
 		$count = Item::count();
+	
 		$panddingItem = Item::where('status', 0)
 			->orderBy('Rating')
 			->get();
@@ -23,10 +31,31 @@ class ApplicantController extends Controller
 			->orderBy('Rating')
 			->get();
 
-    $candidate = Item::where('status', '3')
+        $candidate = Item::where('status', '3')
 			->orderBy('Rating')
-			->get();  
-		return view('applicant', compact('panddingItem', 'completeItem', 'goodItem', 'candidate', 'count'));
+			->get(); 
+			
+			
+
+            
+
+			$product = Job::where( function($query) use($request){
+				return $request->Status_id ?
+					   $query->from('items')->where('id',$request->Status_id) : '';
+		   })
+		   ->with('item')
+		   ->get();
+
+		   
+	
+	$selected_id = [];
+	$selected_id['Status_id'] = $request->Status_id;
+
+
+	
+		
+
+		return view('applicant', compact('panddingItem', 'completeItem', 'goodItem', 'candidate', 'count','product','selected_id'));
 	}
 	public function updateItems(Request $request)
 	{

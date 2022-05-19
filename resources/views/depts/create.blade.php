@@ -2,9 +2,10 @@
 
 
 @section('content')
-
-<div class="main_container" style=" width: (100% - 70px);
-margin-left: %; ">
+<html>
+    <head></head>
+<body>
+<div class="main_container" >
 
 <div class="row">
     <div class="col-lg-12 margin-tb">
@@ -71,5 +72,10 @@ margin-left: %; ">
 </form>
 </div>
 </div>
+
+@include('sweetalert::alert')
+
+</body>
+</html>
 
 @endsection

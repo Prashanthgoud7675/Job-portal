@@ -23,18 +23,25 @@
     <title>XSILICA HRMS</title>
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-
+<style>
+    body{
+        background-image: url("https://images.unsplash.com/photo-1497091071254-cc9b2ba7c48a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTF8fHRlY2hub2xvZ3l8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60");
+     
+     
+        background-size: cover;
+    }
+</style>
 
 </head>
 
-<body style="background-color: whitesmoke">
+<body >
 
 
     <div class="row">
-        <div class="col-md-3"></div>
+        <div class="col-md-4"></div>
 
-        <div class="col-md-6" style="margin-top: 9%">
-            <div class="bg-white" style="padding-top:4%;padding-bottom:4%;border-radius:25px">
+        <div class="col-md-5" style="margin-top: 9%;background-color:rgba(192,192,192,0.2);border-radius:5%">
+            <div class="" style="padding-top:4%;padding-bottom:4%;border-radius:25px">
                 <div class="flex justify-center">
                     <img src="https://imagizer.imageshack.com/img923/5138/bRZo8P.png" alt="logo" height="170px"
                         width="150px">
@@ -95,7 +102,7 @@
                                     </div>
                                 @enderror
                             </div>
-                            <a href="{{route('forget.password.get')}}" > <h1 style="font-size: 17px; font-weight:600; margin-left: 60%; margin-bottom:5%;color:dodgerblue"> Forgot Password! </h1> </a>
+                            <a href="{{route('forget.password.get')}}" > <h1  style="font-size: 17px; font-weight:600; margin-left: 50%; margin-bottom:5%;color:whitesmoke"> Forgot Password! </h1> </a>
 
 
 
@@ -108,7 +115,7 @@
 
 
 
-                            <a href="register" >  <h1 style="font-size: 17px; font-weight:600; margin-left: 0%; margin-bottom:5%;color:dodgerblue"> create an account now! </h1> </a>
+                            <a href="register" >  <h1 class="text-center" style="font-size: 17px; font-weight:600; margin-left: 0%; margin-bottom:5%;color:whitesmoke;text-decoration:underline"> New User? Register </h1> </a>
 
 
                         </form>
@@ -118,7 +125,7 @@
             </div>
         </div>
     </div>
-
+    @include('sweetalert::alert')
 </body>
 
 </html>

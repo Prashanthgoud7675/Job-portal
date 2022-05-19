@@ -19,8 +19,8 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-       
         <style>
             .list-group {
                 width: 225px;
@@ -36,6 +36,7 @@
             <br>
             <br>
 
+          
 
             <div class="top" style="margin-top: 8%">
                 <div class="container"
@@ -74,93 +75,176 @@
                 </div>
             </div>
 
-        
-         <div class="container"  style=" display: flex; margin-left:5%;margin-right:15%;margin-top:3%">
-            <div class="status" id="no_status">
 
-                <div class="card" style="width: 20rem;">
+            <div class="container" style=" display: flex; margin-left:5%;margin-right:15%;margin-top:3%">
+                <div class="status" id="no_status">
 
-                    <h3 style="font-size:20px;margin-top:-4%">
-                        Total Candidates: <sapn style="background-color: #b34d4d; padding-left:7%;padding-right:7%">
-                          {{$count}}  </span> </h3>
-                </div>
-            </div>
-        </div>
+                    <div class="card" style="width: 20rem;">
 
-        <br>
-
-        
-
-
-
-        <div class="card" style="  width: 1300px; height: 90vh; display: flex; margin-left:5%;margin-top:5%">
-            <div class="status" id="no_status" >
-                <div class="card" style="width: 22rem; border-top: 8px solid #0080ff">
-
-                    <div style="display: flex">
-                        <h5 style="margin-left:5%;font-size:17px; padding-top:5px"> New Applied</h5>
-                        <br>
-
+                        <h3 style="font-size:20px;margin-top:-4%">
+                            Total Candidates: <sapn style="background-color: #b34d4d; padding-left:7%;padding-right:7%">
+                                {{ $count }} </span> </h3>
                     </div>
                 </div>
-                
-                <div style="margin-top:5px;" >
+            </div>
 
-                    <ul class="list-group connectedSortable" id="padding-item-drop" style="width: 22rem;">
-                        @if (!empty($panddingItem) && $panddingItem->count())
-                            @foreach ($panddingItem as $key => $value)
-                                <li class="list-group-item " item-id="{{ $value->id }}" style="background-image: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #efefef 48%, #d9d9d9 75%, #bcbcbc 100%);">
-                                    <div>
-                                        <div style="display:flex">
-                                            <img src="{{ $value->Profile_url }}"
-                                                style=" border-radius:50%;height:50px; width:50px">
+            <br>
 
-                                            <p style="margin-right:-30%; margin-left:12%;margin-bottom:%;font-size:16px">
-                                                {{ $value->First_Name }} {{ $value->Last_Name }}</p>
-                                        </div>
-
-                                        <div style="display:flex;margin-top:15%">
+            @if ($message = Session::get('status'))
+            <div class="alert alert-success" style="width: 700px; margin-left:350px ">
+                <p>{{ $message }}</p>
+            </div>
+        @endif
+            
 
 
-                                            <div class="overlay"
-                                                style="position: relative; margin-left:-2%; color:#F4D03F;font-size:13px">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header">{{ __('Filter Example | CodeChief') }}</div>
+            
+                            <form action="{{ route('filter') }}" method="GET" style="margin-top: 20px;">
+                            <select name="Status_id" id="input">
+                                <option value="0">Select Price</option>
+                                @foreach (\App\Models\Item::select('id','Status')->get() as $item)
+                                    <option value="{{ $item->id }}" {{ $item->id == $selected_id['Status_id'] ? 'selected' : '' }}>
+                                    {{ $item['Status'] }}
+                                    </option>
+                                @endforeach
+                            </select>
+                            
+                            <input type="submit" class="btn btn-danger btn-sm active" value="Filter">
+                            </form>
+                        
+                        
+                            <table class="table table-stripped">
+                                <thead>
+                                    <tr>
+                                        <th>S.No</th>
+                                        <th>JobTitle</th>
+                                        <th>Status</th>
+                                        
+                                        
+                                    </tr>
+                                </thead>
+                            
+                                    @forelse($product as $product )
+                                    <tr>
+                                        
+                                        <td>{{$loop->index+1}}</td>
+                                        <td>{{ $product->JobTitle }}</td>
+                                        <td>{{ $product->item->Status }}</td>                                        
+                                        
+                                    </tr>
 
-                                                @while ($value->Rating > 0)
-                                                    @if ($value->Rating > 0.5)
-                                                        <i class="fa fa-star checked"></i>
-                                                    @else
-                                                        <i class="fa fa-star-half-o"></i>
-                                                    @endif
-                                                    @php $value->Rating--; @endphp
-                                                @endwhile
+                                    
 
+                        
+                        
+                                    @empty
+                                    <p> No data Found </p>
+
+
+
+
+
+                                    
+
+
+                                    @endforelse
+
+
+                            
+                            
+
+
+
+                    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+            <div class="card" style="  width: 1300px; height: 90vh; display: flex; margin-left:5%;margin-top:5%">
+                <div class="status" id="no_status">
+                    <div class="card" style="width: 22rem; border-top: 8px solid #0080ff">
+
+                        <div style="display: flex">
+                            <h5 style="margin-left:5%;font-size:17px; padding-top:5px"> New Applied</h5>
+                            <br>
+
+                        </div>
+                    </div>
+
+                    <div style="margin-top:5px;">
+
+                        <ul class="list-group connectedSortable" id="padding-item-drop" style="width: 22rem;">
+                            @if (!empty($panddingItem) && $panddingItem->count())
+                                @foreach ($panddingItem as $key => $value)
+                                    <li class="list-group-item " item-id="{{ $value->id }}"
+                                        style="background-image: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #efefef 48%, #d9d9d9 75%, #bcbcbc 100%);">
+                                        <div>
+                                            <div style="display:flex">
+                                                <img src="{{ $value->Profile_url }}"
+                                                    style=" border-radius:50%;height:50px; width:50px">
+
+                                                <p
+                                                    style="margin-right:-30%; margin-left:12%;margin-bottom:%;font-size:16px">
+                                                    {{ $value->First_Name }} {{ $value->Last_Name }}</p>
                                             </div>
-                                            <h4 style="margin-left:5%;margin-top:2%;font-size:17px">5 years Exp</h4>
+
+                                            <div style="display:flex;margin-top:15%">
+
+
+                                                <div class="overlay"
+                                                    style="position: relative; margin-left:-2%; color:#F4D03F;font-size:13px">
+
+                                                    @while ($value->Rating > 0)
+                                                        @if ($value->Rating > 0.5)
+                                                            <i class="fa fa-star checked"></i>
+                                                        @else
+                                                            <i class="fa fa-star-half-o"></i>
+                                                        @endif
+                                                        @php $value->Rating--; @endphp
+                                                    @endwhile
+
+                                                </div>
+                                                <h4 style="margin-left:5%;margin-top:2%;font-size:17px">5 years Exp</h4>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                                <br>
-                            @endforeach
-                        @endif
-                    </ul>
-
-                </div>
-            </div>
-            <div class="status" style="margin-left:4%">
-                <div class="card" style="width: 22rem;border-top: 8px solid #008B8B">
-
-                    <div style="display: flex">
-                        <h5 style="margin-left:5%;font-size:17px;padding-top:5px"> Screening</h5>
+                                    </li>
+                                    <br>
+                                @endforeach
+                            @endif
+                        </ul>
 
                     </div>
                 </div>
-                <div style="width: 15rem; margin-top:5px"" >
+                <div class="status" style="margin-left:4%">
+                    <div class="card" style="width: 22rem;border-top: 8px solid #008B8B">
 
-                    <ul class="list-group  connectedSortable" id="complete-item-drop" style="width: 22rem">
+                        <div style="display: flex">
+                            <h5 style="margin-left:5%;font-size:17px;padding-top:5px"> Screening</h5>
+
+                        </div>
+                    </div>
+                    <div style="width: 15rem; margin-top:5px"" >
+
+                        <ul class=" list-group  connectedSortable" id="complete-item-drop" style="width: 22rem">
                         @if (!empty($completeItem) && $completeItem->count())
                             @foreach ($completeItem as $key => $value)
-                                <li class="list-group-item " item-id="{{ $value->id }}" style="background-image: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #efefef 48%, #d9d9d9 75%, #bcbcbc 100%);">
-                                    <div >
+                                <li class="list-group-item " item-id="{{ $value->id }}"
+                                    style="background-image: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #efefef 48%, #d9d9d9 75%, #bcbcbc 100%);">
+                                    <div>
                                         <div style="display:flex">
                                             <img src="{{ $value->Profile_url }}"
                                                 style=" border-radius:50%;height:50px; width:50px">
@@ -192,26 +276,27 @@
                                 <br>
                             @endforeach
                         @endif
-                    </ul>
-
-                </div>
-            </div>
-
-            <div class="status" style="margin-left:4%">
-                <div class="card" style="width: 22rem;border-top: 8px solid #b34d4d">
-
-                    <div style="display: flex">
-                        <h5 style="margin-left:5%;font-size:17px;padding-top:5px"> Interview </h5>
+                        </ul>
 
                     </div>
                 </div>
 
-                <div class="card" style="width: 15rem;margin-top:5px"">
+                <div class="status" style="margin-left:4%">
+                    <div class="card" style="width: 22rem;border-top: 8px solid #b34d4d">
 
-                    <ul class="list-group  connectedSortable" id="good-item-drop" style="width: 22rem">
+                        <div style="display: flex">
+                            <h5 style="margin-left:5%;font-size:17px;padding-top:5px"> Interview </h5>
+
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: 15rem;margin-top:5px"">
+
+                        <ul class=" list-group  connectedSortable" id="good-item-drop" style="width: 22rem">
                         @if (!empty($goodItem) && $goodItem->count())
                             @foreach ($goodItem as $key => $value)
-                                <li class="list-group-item " item-id="{{ $value->id }}" style="background-image: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #efefef 48%, #d9d9d9 75%, #bcbcbc 100%);">
+                                <li class="list-group-item " item-id="{{ $value->id }}"
+                                    style="background-image: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #efefef 48%, #d9d9d9 75%, #bcbcbc 100%);">
                                     <div>
                                         <div style="display:flex">
                                             <img src="{{ $value->Profile_url }}"
@@ -244,71 +329,72 @@
                                 <br>
                             @endforeach
                         @endif
-                    </ul>
-
-                </div>
-            </div>
-
-
-
-            <div class="status" style="margin-left:4%">
-                <div class="card" style="width: 22rem;border-top: 8px solid #00ffff; ">
-
-                    <div >
-                        <h5 style="margin-left:5%;font-size:17px; padding-top:5px"> Hired </h5>
+                        </ul>
 
                     </div>
                 </div>
-                
-            
-                <div  style="width: 15rem;margin-top:5px" >
-
-                    <ul class="list-group  connectedSortable" id="candidate-item-drop" style="width: 22rem">
-                        @if (!empty($candidate) && $candidate->count())
-                            @foreach ($candidate as $key => $value)
-                                <li class="list-group-item " item-id="{{ $value->id }}" style="background-image: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #efefef 48%, #d9d9d9 75%, #bcbcbc 100%);">
-                                    <div>
-                                        <div style="display:flex">
-                                            <img src="{{ $value->Profile_url }}"
-                                                style="margin-top: %;margin-left:%; border-radius:50%;height:50px; width:50px">
-
-                                            <p style="margin-left:12%;margin-right:-30%;font-size:17px">
-                                                {{ $value->First_Name }} {{ $value->Last_Name }}</p>
-                                        </div>
 
 
-                                        <div style="display:flex;margin-top:15%">
+
+                <div class="status" style="margin-left:4%">
+                    <div class="card" style="width: 22rem;border-top: 8px solid #00ffff; ">
+
+                        <div>
+                            <h5 style="margin-left:5%;font-size:17px; padding-top:5px"> Hired </h5>
+
+                        </div>
+                    </div>
 
 
-                                            <div class="overlay"
-                                                style="position: relative; margin-left:-2%; color:#F4D03F;font-size:13px">
+                    <div style="width: 15rem;margin-top:5px">
 
-                                                @while ($value->Rating > 0)
-                                                    @if ($value->Rating > 0.5)
-                                                        <i class="fa fa-star checked"></i>
-                                                    @else
-                                                        <i class="fa fa-star-half-o"></i>
-                                                    @endif
-                                                    @php $value->Rating--; @endphp
-                                                @endwhile
+                        <ul class="list-group  connectedSortable" id="candidate-item-drop" style="width: 22rem">
+                            @if (!empty($candidate) && $candidate->count())
+                                @foreach ($candidate as $key => $value)
+                                    <li class="list-group-item " item-id="{{ $value->id }}"
+                                        style="background-image: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #efefef 48%, #d9d9d9 75%, #bcbcbc 100%);">
+                                        <div>
+                                            <div style="display:flex">
+                                                <img src="{{ $value->Profile_url }}"
+                                                    style="margin-top: %;margin-left:%; border-radius:50%;height:50px; width:50px">
 
+                                                <p style="margin-left:12%;margin-right:-30%;font-size:17px">
+                                                    {{ $value->First_Name }} {{ $value->Last_Name }}</p>
                                             </div>
-                                            <h4 style="margin-left:5%;margin-top:2%;font-size:17px">5 years Exp</h4>
+
+
+                                            <div style="display:flex;margin-top:15%">
+
+
+                                                <div class="overlay"
+                                                    style="position: relative; margin-left:-2%; color:#F4D03F;font-size:13px">
+
+                                                    @while ($value->Rating > 0)
+                                                        @if ($value->Rating > 0.5)
+                                                            <i class="fa fa-star checked"></i>
+                                                        @else
+                                                            <i class="fa fa-star-half-o"></i>
+                                                        @endif
+                                                        @php $value->Rating--; @endphp
+                                                    @endwhile
+
+                                                </div>
+                                                <h4 style="margin-left:5%;margin-top:2%;font-size:17px">5 years Exp</h4>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                                <br>
-                            @endforeach
-                        @endif
-                    </ul>
+                                    </li>
+                                    <br>
+                                @endforeach
+                            @endif
+                        </ul>
+
+                    </div>
+
 
                 </div>
-
-
             </div>
-        </div>
 
-        <div id="overlay"></div>
+            <div id="overlay"></div>
 
         </div>
 
@@ -355,13 +441,15 @@
                             Hired: Hired
                         },
                         success: function(data) {
-                            console.log('success');
+                            Swal('success');
                         }
                     });
 
                 });
             });
         </script>
+
+        
 
     </body>
 

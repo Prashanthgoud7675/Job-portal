@@ -5,17 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Event extends Model
+class Product extends Model
 {
     use HasFactory;
 
-    protected $table="events";
-
-    protected $fillable = [
-		'title', 'start', 'end'
-	];
-
-  
-
     
+    public function price()
+    {
+    	return $this->hasOne(Price::class);
+    }
 }

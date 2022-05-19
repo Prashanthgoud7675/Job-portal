@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Helpers\Helper;
 use Validator;
 
+
 class DeptController extends Controller
 {
     /**
@@ -17,6 +18,8 @@ class DeptController extends Controller
     public function index()
     {
         $data = Dept::all();
+
+       
         
         return view('depts.index' , ['data' => $data]);
 
@@ -52,7 +55,7 @@ class DeptController extends Controller
         $dept->create($request->all());
 
         return redirect()->route('depts.index')
-            ->with('success', ' updated successfully');
+        ->withSuccessMessage('Department added Successfully');
     }
 
     /**
@@ -98,7 +101,7 @@ class DeptController extends Controller
         $dept->update($request->all());
 
         return redirect()->route('depts.index')
-            ->with('success', ' updated successfully');
+        ->withSuccessMessage('Department edited Successfully');
     }
 
     /**
@@ -112,6 +115,6 @@ class DeptController extends Controller
         $dept->delete();
 
         return redirect()->route('depts.index')
-            ->with('success', ' deleted successfully');
+        ->withSuccessMessage('Department deleted Successfully');
     }
 }

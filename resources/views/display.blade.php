@@ -58,7 +58,7 @@
                           <div class="card" style="width: 17rem; border-radius:15px; background-color:rgb(225, 222, 222)">
                           
                             <div class="card-header" style="background-color:#ff6666;height:25px; border-top-left-radius:15px">
-                                <h5 style="float:right;padding-bottom:5%;padding-top:2%;padding-right:3%;font-size:17px">{{ $i->job_id }}</h5>
+                                <h5 style="float:right;padding-bottom:5%;padding-top:2%;padding-right:3%;font-size:17px">{{ $i->JobId }}</h5>
                             </div>
         
                             <h2 style="margin-left:3%;padding-top:5%;font-size:17px;font-weight:700;padding-left:5%"> <a

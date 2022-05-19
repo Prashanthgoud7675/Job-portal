@@ -80,6 +80,8 @@
                                     <button type="submit"
                                         class="bg-blue-500 text-white px-4 py-3 rounded font-medium w-full">Send Password Reset Link </button>
                                 </div>
+
+                                <a href="login"><h1 class="text-muted text-center" style="font-size:17px;font-weight:600;margin-top:5%;text-decoration:underline">Back to login page</h1></a>
     
                                
     

@@ -70,7 +70,7 @@
                                             <tr>
     
                                                 <td>{{ $i->id }}</td>
-                                                <td>{{ $i->job_id }}</td>
+                                                <td>{{ $i->JobId }}</td>
                                                 <td>{{ $i->JobTitle }}</td>
                                                 <td>{{ $i->JobRole }}</td>
                                                 <td>{{ $i->Description }}</td>

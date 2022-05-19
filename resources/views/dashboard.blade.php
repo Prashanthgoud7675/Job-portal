@@ -6,6 +6,7 @@
 
     <head>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <style></style>
 
 
     </head>
@@ -106,7 +107,7 @@
 
 
                 <div class="col-md-4">
-                    <div class="card" style=" border-radius:10px;background-color:#d1e0e0;height: 67vh ">
+                    <div class="card" style=" border-radius:10px;background-color:#d1e0e0; height: 67vh ">
 
                         <div class="card header"> <b>
                                 <h1 style="font-size: 20px; font-weight:600;padding:10px ">Job Summary </h1>
@@ -206,6 +207,8 @@
 
             </div>
         </div>
+
+        @include('sweetalert::alert')
 
     </body>
 

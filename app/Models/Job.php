@@ -19,7 +19,7 @@ class Job extends Model
     protected $guarded = [];
    
     protected $fillable = [
-        'job_id',
+        'JobId',
         'JobTitle',
         'JobRole',
         'Description',
@@ -33,5 +33,11 @@ class Job extends Model
         'ApplyLink',
         'CloseDate',
          ];
+
+
+    public function item()
+    {
+    	return $this->hasOne(Item::class);
+    }
          
 }

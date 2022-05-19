@@ -53,7 +53,7 @@ class JobController extends Controller
     {
         $request->validate([
 
-            'job_id' => 'required',
+            'JobId' => 'required',
             'JobTitle' => 'required',
             'JobRole' => 'required',
             'Description' => 'required',
@@ -111,7 +111,7 @@ class JobController extends Controller
     {
         $request->validate([
 
-            'job_id' => 'required',
+            'JobId' => 'required',
             'JobTitle' => 'required',
             'JobRole' => 'required',
             'Description' => 'required',
