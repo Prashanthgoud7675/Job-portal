@@ -107,4 +107,6 @@ margin-left: %; ">
 </div>
 </div>
 
+@include('sweetalert::alert')
+
 @endsection

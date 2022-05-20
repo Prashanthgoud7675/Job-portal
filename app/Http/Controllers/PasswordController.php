@@ -29,14 +29,14 @@ class PasswordController extends Controller
         ]);
   
         if(!Hash::check($request->old_password,auth()->user()->password)){
-            return back()->with("error","old password doesnot match!");
+            return back()->witherrorMessage('Old Password Doesnot Matched');
         }
         
         User::whereId(auth()->user()->id)->update([
             'password' => Hash::make($request->new_password)
 
         ]);
-        return redirect('/login')->with("success","password changed succesfully!");
+        return redirect('/login')->withSuccessMessage('Password Changed Successfully');
     }
     
 }

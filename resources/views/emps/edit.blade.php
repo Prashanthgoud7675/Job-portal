@@ -82,6 +82,13 @@
         
                 <x-input id="Profile_url" class="block mt-1 w-full h-10" style="background-color:rgb(243, 235, 235);width:500px" type="string" name="Profile_url" value="{{$emp->Profile_url}}" required autofocus />
             </div>
+
+            <div style="margin-bottom: 4%">
+                <x-label for="Remarks" :value="__('Remarks')" style="font-size: 15px"/>
+        
+                <x-input id="Remarks" class="block mt-1 w-full h-10" style="background-color:rgb(243, 235, 235);width:500px" type="string" name="Remarks" value="{{$emp->Remarks}}" required autofocus />
+            </div>
+        
         
         
             
@@ -97,5 +104,7 @@
 </form>
 </div>
 </div>
+
+@include('sweetalert::alert')
 
 @endsection

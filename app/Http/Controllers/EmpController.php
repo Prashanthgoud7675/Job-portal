@@ -62,7 +62,7 @@ class EmpController extends Controller
         $emp->create($request->all());
 
         return redirect()->route('emps.index')
-            ->with('success', ' created successfully');
+        ->withSuccessMessage('created Successfully');
     
     }
 
@@ -116,7 +116,7 @@ class EmpController extends Controller
         $emp->update($request->all());
 
         return redirect()->route('emps.index')
-            ->with('success', ' updated successfully');
+        ->withSuccessMessage('upadted Successfully');
     
     }
 
@@ -131,6 +131,6 @@ class EmpController extends Controller
         $emp->delete();
 
         return redirect()->route('emps.index')
-            ->with('success', 'Employee deleted successfully');
+        ->withSuccessMessage('Deleted Successfully');
     }
 }

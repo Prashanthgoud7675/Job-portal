@@ -73,7 +73,7 @@ class JobController extends Controller
         Job::create($request->all());
 
         return redirect()->route('jobs.index')
-            ->with('success', 'Job created successfully.');
+        ->withSuccessMessage('Job Created Successfully');
     }
 
     /**
@@ -130,7 +130,7 @@ class JobController extends Controller
         $job->update($request->all());
 
         return redirect()->route('jobs.index')
-            ->with('success', 'Job updated successfully');
+        ->withSuccessMessage('Job Updated Successfully');
     }
 
     /**
@@ -144,6 +144,6 @@ class JobController extends Controller
         $job->delete();
 
         return redirect()->route('jobs.index')
-            ->with('success', 'Jobs deleted successfully');
+        ->withSuccessMessage('Job Deleted Successfully');
     }
 }

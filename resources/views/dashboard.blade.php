@@ -21,19 +21,19 @@
 
                 <div class="col-md-8">
                     <br>
-                    <div class="card" style="width: 80rem;background-color:#d1e0e0; border-radius:10px;">
+                    <div class="card" style="width: 85rem; border-radius:10px;background-color:white;padding:10px">
                         <div class="card-header" style="margin-bottom: 3%;">
                             <h1 style="margin-left: 2%;padding-top:2%; font-weight:600">Hiring Pipeline</h1>
 
 
-                            <h5 style="float:right;margin-top:-2%;margin-right:2%; font-weight:600">ViewAllJobs</h5>
+                             <a href="display"> <h5 style="float:right;margin-top:-2%;margin-right:2%; font-weight:600">ViewAllJobs</h5> </a>
                         </div>
                         <div class="card-body" style="display:flex">
-                            <h1 style="margin-left:5%; font-weight:600">Jobs</h1>
+                            <h1 style="margin-left:3%; font-weight:600">Jobs</h1>
                             <h1 style="margin-left:14%; font-weight:600">New Applied</h1>
                             <h1 style="margin-left:13%; font-weight:600">Screening</h1>
-                            <h1 style="margin-left:12%; font-weight:600">Interview</h1>
-                            <h1 style="margin-left:13%; font-weight:600">Hired</h1>
+                            <h1 style="margin-left:15%; font-weight:600">Interview</h1>
+                            <h1 style="margin-left:16%; font-weight:600">Hired</h1>
                         </div>
                         <br>
                         <br>
@@ -48,39 +48,39 @@
 
 
 
-                                    <h1 style="margin-left:0%;font-weight:700">{{ $i->deptname }}</h1>
+                                    <h1 style="font-weight:700;" >{{ $i->deptname }}</h1>
 
 
                                 </div>
 
 
 
-                                <div class="col-md-2" "  style=" margin-left:7%;margin-top:-2%;margin-bottom:2%">
+                                <div class="col-md-2" "  style=" margin-left:4%;margin-top:-2%;margin-bottom:2%">
                                     <br>
                                     <div class="card"
-                                        style="width: 10rem; height:35px ;border:1px solid rgb(174, 150, 150)">
-                                        <h1>{{ $NewApplied }}</h1>
+                                        style="width: 12rem; height:45px ;border:1px solid rgb(174, 150, 150);background-color:#8DBFB4;border-radius:5px">
+                                        <h1 style="padding:10%;font-weight:600;color:white">{{ $NewApplied }} Candidates</h1>
 
                                     </div>
                                 </div>
 
 
 
-                                <div class="col-sm-2" style="margin-left:6%;margin-top:-2%">
+                                <div class="col-sm-2" style="margin-right:6%;margin-left:5%;margin-top:-2%">
                                     <br>
                                     <div class="card"
-                                        style="width: 10rem; height:35px;border:1px solid rgb(174, 150, 150)">
-                                        <h1>{{ $Screening }}</h1>
+                                        style="width: 12rem; height:45px;border:1px solid rgb(174, 150, 150);background-color:#6797D4;border-radius:5px">
+                                        <h1 style="padding:10%;font-weight:600;color:white">{{ $Screening }} Candidates</h1>
 
 
                                     </div>
                                 </div>
 
-                                <div class="col-sm-2" style="margin-left:4%;margin-top:-2%">
+                                <div class="col-sm-2" style="margin-left:0%;margin-top:-2%;">
                                     <br>
                                     <div class="card"
-                                        style="width: 10rem; height:35px;border:1px solid rgb(174, 150, 150)">
-                                        <h1>{{ $Interview }}</h1>
+                                        style="width: 12rem; height:45px;border:1px solid rgb(174, 150, 150);background-color:#B691C1;border-radius:5px">
+                                        <h1 style="padding:10%;font-weight:600;color:white">{{ $Interview }} Candidates</h1>
                                     </div>
                                 </div>
                                 <div class="col-sm-2" style="margin-left:5%;margin-top:-2%;">
@@ -88,8 +88,8 @@
 
                                     <br>
                                     <div class="card"
-                                        style="width: 10rem; height:35px;border:1px solid rgb(174, 150, 150)">
-                                        <h1>{{ $Hired }}</h1>
+                                        style="width: 12rem; height:45px;border:1px solid rgb(174, 150, 150);background-color:#B2A1B7;border-radius:5px">
+                                        <h1 style="padding:10%;font-weight:600;color:white">{{ $Hired }} Candidates</h1>
                                     </div>
                                 </div>
 
@@ -107,12 +107,13 @@
 
 
                 <div class="col-md-4">
-                    <div class="card" style=" border-radius:10px;background-color:#d1e0e0; height: 67vh ">
+                    <div class="card" style=" border-radius:10px;background-color:white; height: 80vh ">
 
                         <div class="card header"> <b>
                                 <h1 style="font-size: 20px; font-weight:600;padding:10px ">Job Summary </h1>
                             </b> </div>
                         <hr>
+                        <br>
                         <br>
 
 
@@ -140,18 +141,18 @@
 
                 <div class="col-md-8">
                     <div class="card"
-                        style="display:flex;background-color:#d1e0e0;padding:2%;width:80rem; border-radius:10px">
-                        <h3 style="font-size:17px">My Task</h3>
-                        <h3 style="margin-left:80%; font-size:17px"> Add Task</h3>
+                        style="display:flex;background-color:white;padding:2%;width:85rem; border-radius:10px">
+                        <h3 style="font-size:17px;margin-left:6%">My Task</h3>
+                        <h3 style="margin-left:73%; font-size:17px"> Add Task</h3>
                     </div>
                     <br>
 
                     @foreach ($data as $i)
                         <div class="card"
-                            style="background-color: #c0c6c9; border-left:4px solid rgb(168, 168, 244);width:80rem; height:40px">
+                            style="background-color: white; border-left:4px solid rgb(168, 168, 244);width:85rem; height:40px">
                             <div style="display:flex">
 
-                                <h1 style="margin-right:0%;margin-top:2%; font-size:17px"> {{ $i->start }} ::
+                                <h1 style="margin-left:3%;margin-top:2%; font-size:17px"> {{ $i->start }} ::
                                     {{ $i->end }} </h1>
 
                                 <h1 style="margin-left:60%;margin-top:2%; font-size:17px">{{ $i->title }}</h1>
@@ -168,13 +169,13 @@
 
                 <div class="col-md-4">
 
-                    <div class="card" style="background-color:#d1e0e0;width:40rem; border-radius:10px">
+                    <div class="card" style="background-color:white;width:40rem; border-radius:10px">
 
                         <div style="padding-top: 1%">
                             <b>
                                 <p style="margin-left: 5%; font-size:20px">Employee</p>
                             </b>
-                            <p style="float:right;margin-top:-6%;margin-right:5%;font-size:17px">View All</p>
+                            <a href="employe"> <p style="float:right;margin-top:-6%;margin-right:5%;font-size:17px">View All</p> </a>
                         </div>
                         <div style="padding:4%;">
                             <div style="border-radius:2%;background-color:#c0c6c9">

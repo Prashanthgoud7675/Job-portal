@@ -46,6 +46,7 @@
                                     <th>Date</th>
                                     <th>Status</th>
                                     <th>Profile_url</th>
+                                    <th>Remarks</th>
                                    
                                     
                                     <th width="250px">Action</th>
@@ -62,6 +63,7 @@
                                         <td>{{ $i-> Date}}</td>
                                         <td>{{ $i-> Status}}</td>
                                         <td>{{ $i->Profile_url }}</td>
+                                        <td>{{ $i->Remarks }}</td>
                                        
                                        
                                         <td>
@@ -95,4 +97,6 @@
     </div>
     </div>
 </div>
+
+@include('sweetalert::alert')
 @endsection
